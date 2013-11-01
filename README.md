@@ -1,4 +1,4 @@
-vetro
-=====
+arkondigital
+============
 
-Repository for Vetro site
+Code repoistory for Arkon Digital
