@@ -1,0 +1,427 @@
+/*Rey's CSS*/
+.nav a li {
+	display: inline;
+}
+
+.navbar {
+	border-radius: 0px;
+}
+
+.navbar-inverse {
+	background-color: #212121;
+	border-color: #080808;
+}
+
+.nav-collapse, .nav-collapse.collapse {
+    overflow: visible;
+}   
+.navbar .btn-navbar {
+    display: none;
+}   
+
+.navbar-header {
+	background: url('/vetro.png') no-repeat;
+	background-size: 100%;
+	height: 80px;
+	width: 85px;
+	position: absolute;
+	top: 38px;
+	left: 75px;
+	/*margin: 30px 0 0 30px;*/
+}
+
+.navbar-brand {
+	padding: 0px;
+	height: 45px;
+	width: 45px;
+}
+
+.navbar-nav li.first-leaf {
+	border-left: 2px groove #555;
+	border-right: 0px;
+}
+
+.navbar-nav li.last-leaf  {
+	border-right: 2px groove #555;
+	border-left: 2px groove #555;
+}
+
+.navbar-nav li {
+	border-left: 2px groove #555;
+}
+
+.navbar a {
+	color: #FFF;
+	text-decoration: none;
+}
+
+.navbar-nav a li {
+	padding: 7px 12px;
+	padding-bottom: 6px;
+	font-family: 'Calibri', sans-serif;
+	font-weight: bold;
+}
+
+/*
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+	color: #89B9FF;
+	background-color: transparent;
+}
+*/
+
+.active {
+	color: #89B9FF;
+	background-color: transparent;
+}
+
+.nav-li:hover {
+	color: #89B9FF;
+	background-color: transparent;
+}
+
+/* FRO's CSS */
+
+.container {
+	margin-top: 0;
+}
+
+.nav-social-icons {
+	margin-left: 18px;
+	margin-top: -12px;
+}
+
+.nav-social-icons img:hover {
+	cursor: pointer;
+}
+
+.nav-to-right {
+	float: right;
+	padding-right: 0;
+}
+
+.nav-search {
+	padding-right: 30px !important;
+}
+
+.navbar-style {
+	padding: 12px 50px 0;
+	margin-bottom: 0;
+}
+
+.custom-nav-upper {
+	float: right;
+	padding-right: 0;
+}
+
+.custom-nav-upper li a {
+	line-height: 7px;
+	font-size: 12px;
+}
+
+.custom-nav-lower {
+	float: right;
+	padding: 10px 0;
+}
+
+.custom-nav-lower li {
+	border: 0;
+}
+
+.custom-nav-lower li a {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.wrapper {
+	/*background: url('../../background.jpg');*/
+}
+
+.home-container {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.home-container h3, .home-container h4 {
+	color: #151515;
+	font-family: 'Cuprum', sans-serif;
+	font-weight: bold;
+}
+
+.banner img {
+	margin: 0 auto;
+	width: 100%;
+	display: block;
+}
+
+.home-main {
+	padding: 40px 50px 50px;
+}
+
+.home-main img {
+	width: 100%;
+}
+
+.home-main h3 {
+	margin-bottom: 15px;
+}
+
+.t-center {
+	text-align: center;
+}
+
+.home-main span, .youtube-tools span, .partners-container span, .footer-upper span, .footer-lower span {
+	font-size: 11px;
+	line-height: 0px;
+}
+
+.youtube-tools {
+	padding: 0 50px;
+}
+
+.youtube-tools img {
+	width: 100%;
+}
+
+.partners-container {
+	padding: 0 50px 90px;
+	background: url('/worldmap.png') no-repeat center;
+	background-size: cover;
+}
+
+.partners-container img {
+	width: 100%;
+}
+
+.partners-container h3 {
+	margin-bottom: 40px;
+}
+
+.partners-container h4 {
+	margin-top: 0;
+}
+
+.footer-upper {
+	background: url('/top-footer-pattern.jpg');
+	padding: 20px 50px;
+}
+
+.footer-upper h3, .footer-upper span, .footer-lower h3, .footer-lower span {
+	color: white;
+}
+
+.footer-lower {
+	background: #151515;
+	padding: 0 50px 10px;
+}
+
+.footer-lower img {
+	width: 100%;
+}
+
+.footer-lower h3 {
+	text-align: center;
+}
+
+.footer-lower p {
+	color: #414141;
+	line-height: 9px;
+	font-size: 11px;
+}
+
+.t-yellow {
+	color: orange !important;
+}
+
+.vetro-image-footer {
+	display: block;
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+
+.contact-us {
+	padding: 0 30px;
+}
+
+.contact-input {
+	margin-bottom: 10px;
+	background: #2b2b2b;
+	border-color: #2b2b2b;
+	border-radius: 0px;
+}
+
+.contact-submit {
+	margin-left: 29%;
+	width: 42%;
+}
+
+
+.message-box {
+	height: 80px !important;
+	background: #2b2b2b;
+	border-color: #2b2b2b;
+	border-radius: 0px;
+	margin-bottom: 10px;
+}
+
+.home-container img {
+	max-width:100%;
+    max-height:100%;
+    vertical-align: middle;
+}
+
+.sidebar{
+	min-height: 1000px;
+	background-image:url('/SidebarBackground_02.png') ;
+	background-repeat: repeat-y;
+}
+
+.right-content {
+	background: #FFF;
+	min-height: 600px;
+	padding: 30px;
+	color: #404041;
+}
+
+.logo-container-left{
+	margin-top: 13px;
+	padding-left: 20px;
+}
+
+.img-logo-prop{
+	margin-left: 10px;
+	margin-bottom: 8px
+}
+
+.vetro-digital-label{
+	margin-top: 10px;
+}
+
+
+
+.sidebar-label{
+	font-size: 18px;
+}
+
+.sidebar-row-container{
+	border-top: 1px solid #B1ACAC;
+	margin-left: 15px;
+	margin-right: 15px;
+	padding-top: 10px;
+}
+.sidebar-row-container:last-child{
+	border-bottom: 1px solid #B1ACAC;
+	margin-left: 15px;
+	margin-right: 15px;
+	padding-top: 10px;
+}
+
+.sidebar-row-link-container{
+	margin-top: 5px;
+	padding: 15px;
+}
+
+.icon-column-container{
+	margin: 0px auto;
+	margin-left:-20px;
+}
+
+
+#vetro-digital-label-prop{
+	font-size: 13px;
+}
+
+#sidebar-logout{
+	color: #FFFFFF;
+}
+
+#sidebar-logout:hover{
+	color: #428bca;
+	text-decoration: none;
+}
+#sidebar-settings{
+	color: #FFFFFF;
+}
+#sidebar-settings:hover{
+	color: #428bca;
+	text-decoration: none;
+}
+.logo-footer {
+	margin-left: 34%;
+}
+
+/*FRO's dashboard CSS*/
+
+.date-header {
+	margin-bottom: 20px;
+}
+
+.first-date-header {
+	display: inline-block;
+}
+
+.second-date-header {
+	display: inline-block;
+	color: #888;
+}
+
+/*FRO's arkon CSS*/
+
+body, h1, h2, h3, h4, h5, button {
+	font-family: "Ubuntu",Tahoma,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.container-home {
+	width: 980px;
+	margin: 0 auto;
+}
+
+.center-logo {
+	margin-left: 8%;
+}
+
+.center-logo img {
+	/*width: 100%;*/
+}
+
+.content {
+	margin-bottom: 50px;
+}
+
+.center-youtube-button {
+	margin-left: 39.5%;
+}
+
+.left-space {
+	margin-left: 20px;
+}
+
+.arkon-button {
+	border-radius: 8px;
+	cursor: pointer;
+	width: 100%;
+	margin-top: 25px;
+}
+
+.arkon-YT-left {
+	margin-left: 26%;
+}
+
+.head-space {
+	margin: 20px 0;
+	background: #eee;
+	height: 260px;
+	padding-top: 55px;
+}
+
+.text-space {
+	margin: 60px 0;
+	line-height: 14px;
+	text-align: center;
+}
+
+.head-text {
+	text-transform: capitalize;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+}

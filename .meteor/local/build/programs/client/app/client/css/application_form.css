@@ -1,0 +1,240 @@
+/* Fro's CSS */
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: #5C6161;
+	line-height: 23px;
+	margin: 0;
+	background-attachment: fixed;
+	background-size: contain;
+	font-family: "Ubuntu",Tahoma,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.application-container {
+	width: 80%;
+	margin: 0 auto;
+	background: white;
+	opacity: 0.8;
+	padding: 0 30px;
+	border-radius: 3px;
+	margin-bottom: 10px;
+}
+
+.login-wrapper {
+	width: 890px;
+	height: 100%;
+	margin: 0 auto;
+}	
+
+.login-container {
+	margin-top: 120px;
+}
+
+.login-container h1 {
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 32px;
+}
+
+.login-container h1 span {
+	color: orange;
+}
+
+.login-box {
+	margin-left: 8px;
+	padding: 25px 40px 50px 50px;
+	font-weight: normal;
+	background: #fff;
+	border: 1px solid #e5e5e5;
+	-webkit-box-shadow: rgba(200,200,200,0.7) 0 4px 10px -1px;
+	box-shadow: rgba(200,200,200,0.7) 0 4px 10px -1px;
+	width: 300px;
+	margin: 0 auto;
+}
+
+.login_button {
+	cursor: pointer;
+	margin: 5px 10px;
+	float: right;
+	border-radius: 3px;
+}
+
+input[type="text"], input[type="password"]{
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border-width: 1px;
+	border-style: inset;
+	padding: 5px;
+	width: 95%;
+}
+
+label {
+	font-size: 17px;
+}
+
+.vetro-af-container {
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.AF-header h3 {
+	letter-spacing: 4px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.vetro-container {
+	background: #f7f7f7;
+	padding: 15px 40px;
+}
+
+.vetro-container span {
+	margin-left: 12px;
+}
+
+.vetro-container table {
+	margin-top: 10px;
+}
+
+.vetro-container table tr td {
+	padding: 5px 10px;
+	width: 220px;
+}
+
+.submitbutton {
+	margin-bottom: 5px;
+	margin-left: 30px;
+}
+
+.musicinfo-box {
+	height: 86px;
+	width: 100%;
+	border-radius: 8px;
+	padding-left: 10px;
+	border-color: #888;
+}
+
+.td-style {
+	margin-top: -25px;
+}
+
+.td-style2 {
+	height: 110px;
+	margin-top: -50px;
+}
+
+.copyright-file, .cr-status {
+	display: inline-block;
+	margin-left: 0;
+}
+
+span.dropt:hover {
+	text-decoration: none; background: #ffffff; z-index: 6;
+}
+
+span.dropt dt {
+	text-align: left;
+	word-spacing: -8px;
+	position: relative;
+}
+span.dropt span {
+	font-size: 11px;
+	line-height: 2em;
+	position: absolute;
+	left: -9999px;
+    margin: 20px 0 0 0px;
+    padding: 5px 5px 5px 5px;
+    border-style:solid;
+    border-color:black;
+    border-width:1px;
+    z-index: 6;
+
+    border-radius:2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+        
+    -moz-box-shadow: 0px 0px 8px 4px #666;
+    -webkit-box-shadow: 0px 0px 8px 4px #666;
+    box-shadow: 0px 0px 8px 4px #666;
+
+}
+span.dropt:hover span {
+	left: 2%;
+	background: #ffffff;
+	margin: 7px 0 0 0;
+	background: #ffffff;
+	z-index:6;
+}
+
+.form {
+	margin-top: 20px;
+}
+
+.form-right {
+	margin-left: -15px;
+}
+
+.form-style {
+	margin-bottom: 10px;
+}
+
+.file-style, .cr-status {
+	margin-top: -38px;
+}
+
+.align-style {
+	margin-top: 5px;
+}
+
+.form-control-left {
+	margin-top: 10px;
+}
+
+fieldset {
+	border: 1px solid #888 !important;
+	padding: 10px;
+	line-height: 18px;
+	border-radius: 8px;
+	margin-bottom: 30px;
+}
+
+fieldset span {
+	
+}
+
+legend {
+	width: inherit !important;
+	border-bottom: none !important;
+	margin-left: 5px;
+	margin-bottom: 0 !important;
+	padding: 0 8px;
+	font-weight: normal;
+}
+
+.googlebtn {
+	padding: 0;
+	margin: 0;
+	margin-left: -10px;
+	margin-top: -3px;
+}
+
+.requirements li {
+	font-size: 13px;
+	width: 100%;
+}
+
+.info span {
+	line-height: 35px;
+}
+
+.test {
+	padding-top: 8px;
+}
+
+.test2 {
+	padding-left: 14px;
+}
+/* End of Fro's CSS*/

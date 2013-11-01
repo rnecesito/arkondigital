@@ -1,0 +1,41 @@
+<template name="index">
+	<div class="container-home">
+		<div class="row head-space">
+			<div class="col-lg-8">
+				<a href="#"><img src="arkon2.png"></a>
+			</div>
+			<div class="col-lg-4 text-space">
+				<span class="head-text"><i>THE NEXT GENERATION <br> OF DIGITAL MEDIA</i></span>
+			</div>
+		</div>
+		<div class="row content">
+			<div class="col-lg-4">
+					<h1>Become a Partner</h1>
+					<span>Welcome to ArkonDigital! You're one step away from a badass career in digital entertainment. Login with YouTube account to continue your partnership application.</span>
+			</div>
+			<div class="col-lg-4 col-lg-offset-1">
+					<h1>Why Sign Up?</h1>
+					<ul class="left-space">
+						<li>Free to Join</li>
+						<li>Instant Ad Approval</li>
+						<li>No aritificial cap CPM/  Far payout</li>
+						<li>Ownership and Control of your channel</li>
+						<li>24/7 live support chat</li>
+						<li>Expand your reach on new platform</li>
+					</ul>
+			</div>
+			<div class="col-lg-3">
+			<!-- <a href="{{pathFor 'partnership'}}">
+			</a> -->
+			{{#unless currentUser}}
+				<a href="{{pathFor 'partnership'}}"> 
+					<!-- <img src="connect-with-YT.png" id="gplusconnect" class="arkon-YT-button"> -->
+					<!-- <button class="btn btn-danger btn-lg arkon-button" id="gplusconnect"><b>Apply for partnership</b></button> -->
+					<button class="btn btn-danger btn-lg arkon-button"><b>Apply for partnership</b></button>
+				  <!-- <img class="btn googlebtn" id="gplusconnect" height="125px" width="101%" src="/gplus.png"> -->
+				</a> 
+			{{/unless}}
+			</div>
+		</div>
+	</div>
+</template>

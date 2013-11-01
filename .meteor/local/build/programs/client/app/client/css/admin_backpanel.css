@@ -1,0 +1,490 @@
+/* Juston's CSS*/
+
+.container {
+	width: 1280px;
+	max-width: none;
+	background-color: rgba(255, 255, 255, 0.95);
+	margin-top: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	opacity: 0.8;
+	border-radius: 3px;
+}
+
+
+.nav > li > a {
+	padding: 7px 8px;
+}
+
+.nav-pills > li + li {
+	margin-left: 6px;
+}
+.nav.nav-admin {
+	font-size: 14px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #AAA;
+}
+
+.modal-body {
+	text-align: left;
+}
+
+#info-modal {
+	color: rgba(25, 90, 125, 0.9)
+}
+
+#info-modal:hover {
+	color: rgba(30, 50, 125, 0.95);
+}
+
+#btnExport {
+float: right;
+margin: 10px 5px;
+width: 125px;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+	background-color: #fAfAfA;
+}
+
+tbody {
+	font-size: 13px;
+}
+
+thead {
+	font-size: 14px;
+}
+
+.table {
+	margin-bottom: 15px;
+}
+
+.table th {
+	text-align: center;
+}
+
+.table tr{
+	text-align: center;
+}
+
+.table td {
+	line-height: 30px !important;
+}
+
+.cs {
+	width: 200px;
+}
+
+.table tr:hover {
+	color: #000;
+}
+
+.table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th {
+	background-color: #C8D7FD !important;
+}
+
+.btn {
+	line-height: normal !important;
+}
+
+.btn-image {
+	margin-left: 10px;
+}
+
+.dropdown-menu {
+	min-width: 125px;
+}
+
+.dropdown-menu.row-menu {
+	min-width: 75px;
+	right: 0px;
+}
+
+#icon-question {
+	dislay:inline;
+}
+
+.toggle-admin {
+	width: 135px;
+}
+
+.toggle.btn {
+	padding: 4px 10px !important;
+}
+
+.toggle-handle.btn {
+	padding: 4px 10px !important;
+}
+
+.toggle-on.btn {
+	font-size: 11px;
+	font-weight: bold;
+	padding-right: 20px !important;
+}
+
+.toggle-off.btn {
+	font-size: 11px;
+	font-weight: bold;
+	padding-left: 14px !important;
+	padding-right: 10px !important;
+	color: #111;
+	text-shadow: none;
+}
+
+.btn.dropdown-toggle {
+	/*background-color: #E2EEFF;
+	background-image: none !important;*/
+	border-color: #49CDCD;
+	padding: 6px 5px;
+	/*font-size: 13px;*/
+}
+
+.btn.active {
+  background-color: rgba(241, 60, 60, 0.95) !important;
+  /**background-color: #d9d9d9 !important;*/
+}
+
+.div-pagination {
+	margin-left: 5px;
+	vertical-align: middle;
+	display: block;
+	width: auto;
+}
+
+.pagination {
+	margin: 10px 5px;
+	float: left;
+	font-size: 13px;
+}
+
+.input-group {
+	float: right;
+	margin: 10px 5px;
+	width: 140px;
+}
+
+.input-group .form-control {
+	width: 100%;
+	margin-bottom: 0;
+	height: 30px
+}
+
+.dropdown-menu > li.denied > a:hover, .dropdown-menu > li.denied  > a:focus {
+	background-color: #CA4242;
+}
+
+.btn-glyph {
+	padding: 2px 6px;
+	margin-left: 2px;
+	zoom: 90%;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.glyphicon-question-sign {
+	margin-left: 2px;
+	top: 3px;
+	zoom: 110%;
+}
+
+.glyph-good {
+	color: #B2B2B2;
+}
+
+.glyph-not {
+	color: #212121;
+}
+
+.glyphicon-picture {
+	font-size: 175%;
+	top: 0px;
+}
+/*End of Juston's CSS*/
+
+/*Bootstrap-toggle CSS*/
+/*
+* bootstrap-toggle v1.0
+* -----------------------------------
+* Copyright 2013 Min Hur, The New York Times Company
+* This content is released under the MIT License.
+*/
+.toggle {
+	min-width: 40px;
+	height: 30px;
+	position: relative;
+	overflow: hidden;
+}
+.toggle input[type="checkbox"] {
+	display: none;
+}
+.toggle-group {
+	position: absolute;
+	width: 200%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	transition: left 0.35s !important;
+	-webkit-transition: left 0.35s !important;
+	-moz-user-select: none !important;
+	-webkit-user-select: none !important;
+}
+.toggle.off .toggle-group {
+	left: -100%;
+}
+.toggle-on {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 50%;
+	margin: 0;
+	border: 0;
+	border-radius: 0;
+}
+.toggle-off {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	right: 0;
+	margin: 0;
+	border: 0;
+	border-radius: 0;
+}
+.toggle-handle {
+	position: relative;
+	margin: 0 auto;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	height: 100%;
+	width: 0px;
+	border-width: 0 1px;
+}
+.toggle-handle.btn-mini {
+	top: -1px;
+}
+.toggle.btn .btn-default{ min-width: 15px; }
+.toggle-on.btn .btn-default{ padding-right: 24px; }
+.toggle-off.btn .btn-default{ padding-left: 24px; }
+
+.toggle.btn-lg { min-width: 40px; }
+.toggle-on.btn-lg { padding-right: 35px; }
+.toggle-off.btn-lg { padding-left: 35px; }
+
+.toggle.btn-sm { min-width: 25px; }
+.toggle-on.btn-sm { padding-right: 20px; }
+.toggle-off.btn-sm { padding-left: 20px; }
+
+.toggle.btn-xs { min-width: 20px; }
+.toggle-on.btn-xs { padding-right: 12px; }
+.toggle-off.btn-xs { padding-left: 12px; }
+/*End Bootstrap Toggle*/
+
+/* Datatable css*/
+
+div.dataTables_length label {
+	font-weight: normal;
+	float: left;
+	text-align: left;
+}
+
+div.dataTables_length select {
+	width: 75px;
+}
+
+div.dataTables_filter label {
+	font-weight: normal;
+	float: right;
+}
+
+div.dataTables_filter input {
+	width: 16em;
+}
+
+div.dataTables_info {
+	padding-top: 8px;
+}
+
+div.dataTables_paginate {
+	float: right;
+	margin: 0;
+}
+
+div.dataTables_paginate ul.pagination {
+	margin: 2px;
+}
+
+table.table {
+	clear: both;
+	margin-top: 6px !important;
+	margin-bottom: 6px !important;
+	max-width: none !important;
+}
+
+table.table thead .sorting,
+table.table thead .sorting_asc,
+table.table thead .sorting_desc,
+table.table thead .sorting_asc_disabled,
+table.table thead .sorting_desc_disabled {
+	cursor: pointer;
+}
+
+table.table thead .sorting { background: url('../images/sort_both.png') no-repeat center right; }
+table.table thead .sorting_asc { background: url('../images/sort_asc.png') no-repeat center right; }
+table.table thead .sorting_desc { background: url('../images/sort_desc.png') no-repeat center right; }
+
+table.table thead .sorting_asc_disabled { background: url('../images/sort_asc_disabled.png') no-repeat center right; }
+table.table thead .sorting_desc_disabled { background: url('../images/sort_desc_disabled.png') no-repeat center right; }
+
+table.dataTable th:active {
+	outline: none;
+}
+
+/* Scrolling */
+div.dataTables_scrollHead table {
+	margin-bottom: 0 !important;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+div.dataTables_scrollHead table thead tr:last-child th:first-child,
+div.dataTables_scrollHead table thead tr:last-child td:first-child {
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+}
+
+div.dataTables_scrollBody table {
+	border-top: none;
+	margin-bottom: 0 !important;
+}
+
+div.dataTables_scrollBody tbody tr:first-child th,
+div.dataTables_scrollBody tbody tr:first-child td {
+	border-top: none;
+}
+
+div.dataTables_scrollFoot table {
+	border-top: none;
+}
+
+
+
+
+/*
+ * TableTools styles
+ */
+.table tbody tr.active td,
+.table tbody tr.active th {
+	background-color: #08C;
+	color: white;
+}
+
+.table tbody tr.active:hover td,
+.table tbody tr.active:hover th {
+	background-color: #0075b0 !important;
+}
+
+.table-striped tbody tr.active:nth-child(odd) td,
+.table-striped tbody tr.active:nth-child(odd) th {
+	background-color: #017ebc;
+}
+
+table.DTTT_selectable tbody tr {
+	cursor: pointer;
+}
+
+div.DTTT .btn {
+	color: #333 !important;
+	font-size: 12px;
+}
+
+div.DTTT .btn:hover {
+	text-decoration: none !important;
+}
+
+ul.DTTT_dropdown.dropdown-menu {
+  z-index: 2003;
+}
+
+ul.DTTT_dropdown.dropdown-menu a {
+	color: #333 !important; /* needed only when demo_page.css is included */
+}
+
+ul.DTTT_dropdown.dropdown-menu li {
+	position: relative;
+}
+
+ul.DTTT_dropdown.dropdown-menu li:hover a {
+	background-color: #0088cc;
+	color: white !important;
+}
+
+div.DTTT_collection_background {
+	z-index: 2002;	
+}
+
+/* TableTools information display */
+div.DTTT_print_info.modal {
+	height: 150px;
+	margin-top: -75px;
+	text-align: center;
+}
+
+div.DTTT_print_info h6 {
+	font-weight: normal;
+	font-size: 28px;
+	line-height: 28px;
+	margin: 1em;
+}
+
+div.DTTT_print_info p {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+
+
+/*
+ * FixedColumns styles
+ */
+div.DTFC_LeftHeadWrapper table,
+div.DTFC_LeftFootWrapper table,
+div.DTFC_RightHeadWrapper table,
+div.DTFC_RightFootWrapper table,
+table.DTFC_Cloned tr.even {
+    background-color: white;
+}
+ 
+div.DTFC_RightHeadWrapper table ,
+div.DTFC_LeftHeadWrapper table {
+    margin-bottom: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+ 
+div.DTFC_RightHeadWrapper table thead tr:last-child th:first-child,
+div.DTFC_RightHeadWrapper table thead tr:last-child td:first-child,
+div.DTFC_LeftHeadWrapper table thead tr:last-child th:first-child,
+div.DTFC_LeftHeadWrapper table thead tr:last-child td:first-child {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+ 
+div.DTFC_RightBodyWrapper table,
+div.DTFC_LeftBodyWrapper table {
+    border-top: none;
+    margin-bottom: 0 !important;
+}
+ 
+div.DTFC_RightBodyWrapper tbody tr:first-child th,
+div.DTFC_RightBodyWrapper tbody tr:first-child td,
+div.DTFC_LeftBodyWrapper tbody tr:first-child th,
+div.DTFC_LeftBodyWrapper tbody tr:first-child td {
+    border-top: none;
+}
+ 
+div.DTFC_RightFootWrapper table,
+div.DTFC_LeftFootWrapper table {
+    border-top: none;
+}
