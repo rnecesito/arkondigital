@@ -1,4 +1,9 @@
-/*Rey's CSS*/
+
+body, h1, h2, h3, h4, h5 {
+	font-family: "Ubuntu",Tahoma,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+
 .nav a li {
 	display: inline;
 }
@@ -58,24 +63,16 @@
 .navbar-nav a li {
 	padding: 7px 12px;
 	padding-bottom: 6px;
-	font-family: 'Calibri', sans-serif;
 	font-weight: bold;
 }
 
-/*
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-	color: #89B9FF;
-	background-color: transparent;
-}
-*/
-
 .active {
-	color: #89B9FF;
+	color: #d43f3a;
 	background-color: transparent;
 }
 
 .nav-li:hover {
-	color: #89B9FF;
+	color: #d43f3a;
 	background-color: transparent;
 }
 
@@ -86,7 +83,7 @@
 }
 
 .nav-social-icons {
-	margin-left: 18px;
+	margin-left: 100px;
 	margin-top: -12px;
 }
 
@@ -143,7 +140,6 @@
 
 .home-container h3, .home-container h4 {
 	color: #151515;
-	font-family: 'Cuprum', sans-serif;
 	font-weight: bold;
 }
 
@@ -366,9 +362,9 @@
 
 /*FRO's arkon CSS*/
 
-body, h1, h2, h3, h4, h5, button {
-	font-family: "Ubuntu",Tahoma,"Helvetica Neue",Helvetica,Arial,sans-serif;
-}
+/*body, h1, h2, h3, h4, h5, button {
+	
+}*/
 
 .container-home {
 	width: 980px;
@@ -384,7 +380,16 @@ body, h1, h2, h3, h4, h5, button {
 }
 
 .content {
-	margin-bottom: 50px;
+	margin-bottom: 20px;
+}
+
+.content img {
+	width: 100%;
+}
+
+.content:before, .content:after {
+	display: table;
+	content: " ";
 }
 
 .center-youtube-button {
@@ -396,10 +401,11 @@ body, h1, h2, h3, h4, h5, button {
 }
 
 .arkon-button {
-	border-radius: 8px;
+	border-radius: 4px;
 	cursor: pointer;
 	width: 100%;
 	margin-top: 25px;
+	background: #df0a0a;
 }
 
 .arkon-YT-left {
@@ -407,21 +413,57 @@ body, h1, h2, h3, h4, h5, button {
 }
 
 .head-space {
-	margin: 20px 0;
-	background: #eee;
-	height: 260px;
-	padding-top: 55px;
+	margin: 10px 0;
+	background: #BBBBBB;
+	height: 160px;
+	padding-top: 10px;
+	border-radius: 4px;
+}
+
+.head-space img {
+	width: 100%;
 }
 
 .text-space {
-	margin: 60px 0;
-	line-height: 14px;
+	margin: 38px 0;
+	line-height: 25px;
 	text-align: center;
 }
 
 .head-text {
-	text-transform: capitalize;
-	font-weight: bold;
-	font-size: 20px;
+	font-weight: 700;
+	font-size: 32px;
 	text-align: center;
+	color: #000;
+}
+
+.YT-button {
+	background: #df0a0a;
+	background-image: -webkit-linear-gradient(top,rgba(255,255,255,.05)0%,rgba (0,0,0,.1)100%);
+	box-shadow: 0 1px 3px rgba(0,0,0,.5);
+	padding: 13px;
+	color: #FFF;
+	font-weight: 700;
+	width: 100%;
+}
+
+.YT-button:hover {
+	background: #df0a0a;
+	box-shadow: 0 0 20px #251D1D !important;
+
+	-webkit-transition: 100ms linear 0s;
+    -moz-transition: 100ms linear 0s;
+    -o-transition: 100ms linear 0s;
+    transition: 100ms linear 0s;
+}
+
+.icon-youtube {
+	height: 40px;
+	width: 40px;
+	margin-left: 20px;
+}
+
+.YT-button-text {
+	margin-left: 20px;
+	font-size: medium;
 }

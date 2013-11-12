@@ -35,13 +35,13 @@ Template.application_form.rendered = function(){
 }
 
 // Template.application_form.events({
-Template.index.events({
+Template.partnership.events({
 	'click #gplusconnect': function(e,t){
 		Meteor.loginWithGoogle({
-			requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/yt-analytics.readonly', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.readonly' , 'https://www.googleapis.com/auth/youtubepartner', 'https://www.googleapis.com/auth/youtubepartner-channel-audit', 'https://www.googleapis.com/auth/plus.me']
+			requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/yt-analytics.readonly', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.readonly' , 'https://www.googleapis.com/auth/youtubepartner', 'https://www.googleapis.com/auth/youtubepartner-channel-audit', 'https://www.googleapis.com/auth/plus.me', 'https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email']
 		});
 	},
-	'click .logoutgplus': function(e,t){
+	'click .logoutButton': function(e,t){
 		Meteor.logout(function(err){
 			if(err){
 
@@ -56,7 +56,7 @@ Template.index.events({
 			console.log(jsondecoded);
 		});
 	},
-	'submit': function(e,t){
+	'click .submitbutton': function(e,t){
 		form = {};
 
 		if(!$('#yt_age').val()){
@@ -71,7 +71,7 @@ Template.index.events({
 			console.log("NO VALUE copyright_status_link");
 		}else if(!$('#music_permissions').val()){
 			console.log("NO VALUE music_permissions");
-		}else{
+		}else if($('#yt_age').val()&&$('#yt_country').val()&&$('#paypal_email').val()&&$('#skype_email').val()&&$('#copyright_status_link').val()&&$('#music_permissions').val()){
 			$.each( $("#app_form1").serializeArray(),function(){
 				form[this.name] = this.value;
 			});
@@ -89,7 +89,9 @@ Template.index.events({
 				}
 				else{
 					$('#app_form1')[0].reset();
-					Meteor.logout();
+					alert("Congratulations! You have successfully applied!");
+					// Meteor.logout();
+					// Router.go('index');
 				}
 			});
 		}
@@ -105,7 +107,18 @@ Template.application_form.helpers({
 	youtubeInfo: function(email){
 
 	}
-})
+});
+
+Template.index.events({
+	'click .YT-button': function(e,t){
+		Meteor.loginWithGoogle({
+			requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/yt-analytics.readonly', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.readonly' , 'https://www.googleapis.com/auth/youtubepartner', 'https://www.googleapis.com/auth/youtubepartner-channel-audit', 'https://www.googleapis.com/auth/plus.me']
+		});
+		if (Meteor.user()) {
+
+		};
+	}
+});
 
 function json_decode (str_json) {	
 	var json = this.window.JSON;

@@ -1,9 +1,9 @@
 <template name="navbarmain">
 	<div class="navbar navbar-inverse navbar-style">
-		<div class="row col-lg-6 nav-social-icons">
-				<a class="navbar-brand" href="/">
-				</a>
-			<div class="row nav-to-right">
+		<div class="row col-lg-4 nav-social-icons">
+				<!-- <a class="navbar-brand" href="/">
+				</a> -->
+			<div class="row">
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav custom-nav-lower">
 						<a href="{{pathFor 'index'}}">
@@ -11,11 +11,11 @@
 								ArkonDigital
 							</li>
 						</a>
-						<a href="{{pathFor 'about'}}">
+						<!-- <a href="{{pathFor 'about'}}">
 							<li class="nav-li menu-li" id="about">
 								Login
 							</li>
-						</a>
+						</a> -->
 						<a href="{{pathFor 'partnership'}}">
 							<li class="nav-li menu-li" id="partnership">
 								Apply for Partnership
@@ -26,12 +26,16 @@
 								YouTube
 							</li>
 						</a>
+						<!-- {{#if currentUser}}
+						<li class="nav-li menu-li">
+								<span><input class="logoutButton" value="Logout"></span>
+							</li>
+						{{else}}
+						
+						{{/if}} -->
 					</ul>
 				</div>
 			</div>
-		</div>
-	</div>
-		<div class="row col-lg-6 nav-to-right">
 		</div>
 	</div>
 </template>
