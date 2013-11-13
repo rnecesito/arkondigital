@@ -5,8 +5,15 @@ Accounts.loginServiceConfiguration.remove({
 Accounts.loginServiceConfiguration.insert({
 	service: "google",
 	/*clientId: "202055712427.apps.googleusercontent.com",*/
+<<<<<<< HEAD
 	// clientId: "549631676875.apps.googleusercontent.com",
 	// secret:"T10y0xrG9QQ3k_9R1PCWDMSJ",
+=======
+/*	clientId: "549631676875.apps.googleusercontent.com",
+	secret:"T10y0xrG9QQ3k_9R1PCWDMSJ",*/
+	clientId: "1062445461634-b2ouqu7lfv9jjsqq87ldddo69jmjv41c.apps.googleusercontent.com",
+	secret: "E1MTt3CORkSdDls2VCGqNbTS",
+>>>>>>> a69d90a470879a7872e6f75bb1c304551a5f2140
 	/*secret: "Wc9ELISnDLNZ-BBGTVbKUJ7w",*/
 
 	clientId: "1062445461634-5mj4e53ttrd3gljja4m4nr7bodsbi86f.apps.googleusercontent.com",

@@ -5,6 +5,16 @@ Template.partnership.rendered = function(){
 	$('.menu-li').removeClass('active');
 	$('#'+page).addClass("active");
 
+	
+	$("#yt_applicant_age").change(function(){
+		var applicant_age = $("#yt_applicant_age").attr("value");
+		if(applicant_age < 18){
+			$('#form-parents-container').removeClass('hidden-div-container');
+		}else{
+			$('#form-parents-container').addClass('hidden-div-container');
+		}
+	});
+
 	$(function(){
 	    $(".copyright-file").hover(function(){
 	      $(this).find(".hover-step").fadeIn();
@@ -17,18 +27,22 @@ Template.partnership.rendered = function(){
 		Meteor.call("checkYT2", Meteor.user().services.google.accessToken, function(error,results){
 			var jsondecoded = json_decode(results.content);
 			console.log(jsondecoded);
-			$('#channel_id').val(jsondecoded.items[0].id);
+			$('#yt_channel_id').val(jsondecoded.items[0].id);
 			$('#yt_channel_name').val(jsondecoded.items[0].snippet.title);
 			$('#yt_channel_name2').html(jsondecoded.items[0].snippet.title);
-	    	$('#yt_daily_views').val(jsondecoded.items[0].statistics.viewCount);
+	    	$('#yt_channel_daily_views').val(jsondecoded.items[0].statistics.viewCount);
 	    	$('#yt_daily_views2').html(jsondecoded.items[0].statistics.viewCount);
-	    	$('#yt_total_views').val(jsondecoded.items[0].statistics.viewCount);
+	    	$('#yt_channel_total_views').val(jsondecoded.items[0].statistics.viewCount);
 	    	$('#yt_total_views2').html(jsondecoded.items[0].statistics.viewCount);
-	    	$('#yt_subscribers').val(jsondecoded.items[0].statistics.subscriberCount);
+	    	$('#yt_channel_subscribers').val(jsondecoded.items[0].statistics.subscriberCount);
 	    	$('#yt_subscribers2').html(jsondecoded.items[0].statistics.subscriberCount);
 	    	$('#cr_status').val(jsondecoded.items[0].auditDetails.overallGoodStanding);
+<<<<<<< HEAD
 	    	$('.connect-to-youtube').addClass('hidden-div-container');
 	    	$('.container-youtube-stats').removeClass('hidden-div-container');
+=======
+	    	$('#youtube_btn_container').addClass('hidden-div-container');
+>>>>>>> a69d90a470879a7872e6f75bb1c304551a5f2140
 	    	// if(jsondecoded.items[0].auditDetails.overallGoodStanding === true){
 	    	// 	$('.cr-status').val("In Good Standing");
 	    	// }else{
