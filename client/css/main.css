@@ -581,8 +581,8 @@ body, h1, h2, h3, h4, h5 {
 	cursor: pointer;
 }
 
-.container-youtube-stats, .container-personal-info {
-	width: 45%;
+.container-youtube-stats, .container-personal-info, .loading {
+	width: 60%;
 	margin: 0 auto;
 }
 
@@ -610,4 +610,7 @@ body, h1, h2, h3, h4, h5 {
 	-moz-transition: 100ms linear 0s;
 	-o-transition: 100ms linear 0s;
 	transition: 100ms linear 0s;
+}
+.hidden-div-container{
+	display: none;
 }
