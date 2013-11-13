@@ -121,7 +121,7 @@ Template.index.events({
 });
 
 Template.partnership.events({
-	'click #YTconnect': function(e,t){
+	'click #YTconnect-apply': function(e,t){
 		Meteor.loginWithGoogle({
 			requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/yt-analytics.readonly', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.readonly' , 'https://www.googleapis.com/auth/youtubepartner', 'https://www.googleapis.com/auth/youtubepartner-channel-audit', 'https://www.googleapis.com/auth/plus.me']
 		});
