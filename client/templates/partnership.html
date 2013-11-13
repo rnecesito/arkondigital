@@ -1,12 +1,32 @@
 <template name="partnership">
-	<div class="container-application">
-		<h2>Connect with</h2>
+	<div class="container-application" id="youtube_btn_container">
+		
 		<div>
+			<h2>Connect with</h2>
 			<div class="col-xs-4"></div>
 			<div class="col-xs-4 fit-pic">
 				<img src="youtube_icon.png" id="YTconnect">
 			</div>
 			<div class="col-xs-4"></div>
+		</div>
+	</div>
+
+	<div class="row partnership-container-form">
+		<div class="col-md-8 partnership-inner-container-form">
+			<label>Google Email: <input type="text" id="googl_email" value="{{currentUser.services.google.email}}" readonly/></label>
+			<label>Youtube Channel Name: <input type="text" id="yt_channel_name" readonly/></label>
+			<label>Youtube Channel Daily Views: <input type="text" id="yt_channel_daily_views" readonly/></label>
+			<label>Youtube Channel Total Views: <input type="text" id="yt_channel_total_views" readonly/></label>
+			<label>Youtube Channel No. Of Subscribers: <input type="text" id="yt_channel_subscribers" readonly/></label>
+			<input type="text" id="yt_applicant_age" />
+			<input type="text" id="birthdate" readonly />
+			<input type="text" id="yt_channel_daily_views" readonly/>
+			<div class="hidden-div-container" id="form-parents-container">
+				<label>Parents Info:</label>
+				<input type="text" id="parents_info_fname" placeholder="Firstname"/>
+				<input type="text" id="parents_info_lname" placeholder="Lastname"/>
+				<input type="text" id="parents_info_phone" placeholder="Phone"/>
+			</div>
 		</div>
 	</div>
 </template>

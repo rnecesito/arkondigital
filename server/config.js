@@ -5,8 +5,10 @@ Accounts.loginServiceConfiguration.remove({
 Accounts.loginServiceConfiguration.insert({
 	service: "google",
 	/*clientId: "202055712427.apps.googleusercontent.com",*/
-	clientId: "549631676875.apps.googleusercontent.com",
-	secret:"T10y0xrG9QQ3k_9R1PCWDMSJ",
+/*	clientId: "549631676875.apps.googleusercontent.com",
+	secret:"T10y0xrG9QQ3k_9R1PCWDMSJ",*/
+	clientId: "1062445461634-b2ouqu7lfv9jjsqq87ldddo69jmjv41c.apps.googleusercontent.com",
+	secret: "E1MTt3CORkSdDls2VCGqNbTS",
 	/*secret: "Wc9ELISnDLNZ-BBGTVbKUJ7w",*/
 	responseType: "token",
 	requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/yt-analytics.readonly', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.readonly' , 'https://www.googleapis.com/auth/youtubepartner', 'https://www.googleapis.com/auth/youtubepartner-channel-audit', 'https://www.googleapis.com/auth/plus.me']
