@@ -563,6 +563,14 @@ body, h1, h2, h3, h4, h5 {
 }
 
 #YTconnect:hover {
+	box-shadow: 0px 0px 20px #000000 !important;
+	-webkit-transition: 100ms linear 0s;
+	-moz-transition: 100ms linear 0s;
+	-o-transition: 100ms linear 0s;
+	transition: 100ms linear 0s;
+}
+
+#YTconnect-apply:hover {
 	box-shadow: inset 0px 3px 20px #888 !important;
 	-webkit-transition: 30ms linear 0s;
 	-moz-transition: 30ms linear 0s;
@@ -570,17 +578,36 @@ body, h1, h2, h3, h4, h5 {
 	transition: 30ms linear 0s;
 	border-radius: 23px;
 	border-color: #AAAAAA;
-
+	cursor: pointer;
 }
 
-
-.partnership-container-form{
-	margin: 0px auto;
-}
-.partnership-inner-container-form{
-	margin: 0px auto;
+.container-youtube-stats, .container-personal-info {
+	width: 45%;
+	margin: 0 auto;
 }
 
-.hidden-div-container{
-	display: none;
+.left-space {
+	margin-left: 20px;
+}
+
+.YT-stats-button {
+	margin-left: 55%;
+	margin-top: 10px;
+	padding: 10px;
+	width: 100%;
+	background: #df0a0a;
+	background-image: -webkit-linear-gradient(top,rgba(255,255,255,.05)0%,rgba (0,0,0,.1)100%);
+	box-shadow: 0 1px 3px rgba(0,0,0,.5);
+	padding: 13px;
+	color: #FFF;
+	border-radius: 6px;
+	font-weight: 700;
+}
+
+.YT-stats-button:hover {
+	box-shadow: 0px 0px 20px #000000 !important;
+	-webkit-transition: 100ms linear 0s;
+	-moz-transition: 100ms linear 0s;
+	-o-transition: 100ms linear 0s;
+	transition: 100ms linear 0s;
 }
