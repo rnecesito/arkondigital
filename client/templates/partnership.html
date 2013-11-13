@@ -49,6 +49,39 @@
 					<h2>Personal Info</h2>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-xs-4">
+	    			<span>Full Legal Name</span><br>
+	    		</div>
+	    		<div class="col-xs-7">
+	    			{{#if currentUser}}
+		     		<span>{{currentUser.profile.name}}</span><br>
+		    		{{else}}
+		    		<span>-</span><br>
+		    		{{/if}}
+	    		</div>
+			</div>
+			<div class="row test">
+	    		<div class="col-xs-4">
+	    			<span>Age</span>
+	    		</div>
+	    		<div class="col-xs-7">
+	    			<input name="age" id="yt_age" placeholder="Current Age" class="form-control">
+	    		</div>
+		    </div>
+		    	<div class="row test">
+				    <div class="col-xs-4">
+		    			<span>Country</span>
+				    </div>							    		
+				    <div class="col-xs-7">
+				     	<input name="country" id="yt_country" placeholder="Country of Residence" class="form-control">
+				    </div>
+		    	</div>	
+			<div class="row">
+				<div class="col-xs-6">
+					<button class="YT-stats-button">NEXT</button>
+				</div>	
+			</div>
 		</div>
 	</div>
 </template>

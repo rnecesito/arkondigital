@@ -578,10 +578,10 @@ body, h1, h2, h3, h4, h5 {
 	transition: 30ms linear 0s;
 	border-radius: 23px;
 	border-color: #AAAAAA;
-
+	cursor: pointer;
 }
 
-.container-youtube-stats {
+.container-youtube-stats, .container-personal-info {
 	width: 45%;
 	margin: 0 auto;
 }

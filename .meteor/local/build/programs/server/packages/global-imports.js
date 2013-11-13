@@ -1,12 +1,9 @@
 /* Imports for global scope */
 
 Accounts = Package['accounts-base'].Accounts;
-RouteContext = Package['iron-router'].RouteContext;
-Route = Package['iron-router'].Route;
-IronRouter = Package['iron-router'].IronRouter;
 RouteController = Package['iron-router'].RouteController;
+Route = Package['iron-router'].Route;
 Router = Package['iron-router'].Router;
-ServerRouter = Package['iron-router'].ServerRouter;
 Meteor = Package.meteor.Meteor;
 WebApp = Package.webapp.WebApp;
 main = Package.webapp.main;
