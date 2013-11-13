@@ -16,8 +16,26 @@ Template.partnership.rendered = function(){
 	});
 
 	$("#personal-btn").click(function(){
-		$(".container-youtube-stats").addClass('hidden-div-container');
-		$(".container-personal-info").removeClass('hidden-div-container');
+
+
+		var daily_views = $("#yt_daily_views2").text();
+		var total_views = $("#yt_total_views2").text();
+		var subscribers = $("#yt_subscribers2").text();
+		var copyright = $("#cr_status").attr("value");
+
+		if(daily_views >= 100 && total_views >= 100 && subscribers >= 1 && copyright)
+		{
+			
+			$(".container-youtube-stats").addClass('hidden-div-container');
+			$(".container-personal-info").removeClass('hidden-div-container');	
+					
+		}
+		else
+		{
+			$(".container-youtube-stats").addClass('hidden-div-container');
+			$(".container-denied").removeClass('hidden-div-container');								
+		}
+	
 	})
 
 	$("#personal-btn2").click(function(){
@@ -33,6 +51,8 @@ Template.partnership.rendered = function(){
 		var lastname = $("#parent_lastname").attr("value");
 		var phone = $("#parent_phone").attr("value");
 		var copyright = $("#cr_status").attr("value");
+
+		console.log("clicked");
 		if(!$("#yt_age").val())
 		{
 			$("#yt_age").focus();
@@ -83,14 +103,8 @@ Template.partnership.rendered = function(){
 				}
 				else
 				{
-					if(daily_views >= 1000 && total_views >= 1000000 && subscribers >= 1000 && copyright){
-						alert("YOUR QUALIFIED TO BE A PORNSTAR");
-					}else{
-						alert("Sorry, You're not QUALIFIED TO BE A PORNSTAR");
-						
-					}
-				/*	$(".container-personal-info").addClass('hidden-div-container');
-					$(".loading").removeClass('hidden-div-container');*/
+					$(".container-personal-info").addClass('hidden-div-container');
+
 				}
 			}
 			

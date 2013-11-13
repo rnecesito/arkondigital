@@ -566,9 +566,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/client/templates/template.partnership.js?a5a4144cf884d538130a6b693a4458137035015a",
-      "size": 4116,
-      "hash": "a5a4144cf884d538130a6b693a4458137035015a"
+      "url": "/client/templates/template.partnership.js?f8d86c250c90fa206ec32a367028f9b321b855f6",
+      "size": 19835,
+      "hash": "f8d86c250c90fa206ec32a367028f9b321b855f6"
     },
     {
       "path": "app/client/templates/template.programs.js",
@@ -638,9 +638,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/client/view-models/partnership.js?2a3453bba5b8f7e5a39caf4f0fb6016f1b588104",
-      "size": 19,
-      "hash": "2a3453bba5b8f7e5a39caf4f0fb6016f1b588104"
+      "url": "/client/view-models/partnership.js?47bbefa46781334b8ccb83e28c2c2e54bde6c582",
+      "size": 7593,
+      "hash": "47bbefa46781334b8ccb83e28c2c2e54bde6c582"
     },
     {
       "path": "app/client/client.js",
@@ -737,18 +737,18 @@
       "where": "client",
       "type": "css",
       "cacheable": true,
-      "url": "/client/css/application_form.css?078030fe7bcc279194731223732fb25617c74ce8",
-      "size": 3377,
-      "hash": "078030fe7bcc279194731223732fb25617c74ce8"
+      "url": "/client/css/application_form.css?c828a81fb960167baecaaf00ce238ca678001848",
+      "size": 3420,
+      "hash": "c828a81fb960167baecaaf00ce238ca678001848"
     },
     {
       "path": "app/client/css/main.css",
       "where": "client",
       "type": "css",
       "cacheable": true,
-      "url": "/client/css/main.css?6af2f8da7caa05dd28ae77857c764fbe657bd9f5",
-      "size": 8852,
-      "hash": "6af2f8da7caa05dd28ae77857c764fbe657bd9f5"
+      "url": "/client/css/main.css?fb0be816f030826c0caf55f2ccb4f64081f75cd3",
+      "size": 8870,
+      "hash": "fb0be816f030826c0caf55f2ccb4f64081f75cd3"
     },
     {
       "path": "packages/bootstrap-3/bootstrap-3/fonts/glyphicons-halflings-regular.eot",
@@ -1282,6 +1282,15 @@
       "hash": "1ca78f8cd41e85a23ed008aebcf246da4a023cbc"
     },
     {
+      "path": "app/loading.gif",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/loading.gif",
+      "size": 39507,
+      "hash": "8711239a8c42b5c003d3a9e0ba9af2893205090b"
+    },
+    {
       "path": "app/photo.jpg",
       "where": "client",
       "type": "asset",
@@ -1527,7 +1536,7 @@
     {
       "path": "app.html",
       "where": "internal",
-      "hash": "259c1542815a05587535c3c7fe8732a6d03e0d69"
+      "hash": "a867d3fb8905ca2bef9a2a356e3f2439ef282e4a"
     }
   ]
 }
