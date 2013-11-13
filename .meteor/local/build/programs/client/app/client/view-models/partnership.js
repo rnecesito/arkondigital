@@ -27,6 +27,8 @@
 	    	$('#yt_subscribers').val(jsondecoded.items[0].statistics.subscriberCount);
 	    	$('#yt_subscribers2').html(jsondecoded.items[0].statistics.subscriberCount);
 	    	$('#cr_status').val(jsondecoded.items[0].auditDetails.overallGoodStanding);
+	    	$('.connect-to-youtube').addClass('hidden-div-container');
+	    	$('.container-youtube-stats').removeClass('hidden-div-container');
 	    	// if(jsondecoded.items[0].auditDetails.overallGoodStanding === true){
 	    	// 	$('.cr-status').val("In Good Standing");
 	    	// }else{
@@ -109,6 +111,14 @@ Template.partnership.helpers({
 	},
 	youtubeInfo: function(email){
 
+	},
+	googleImage: function(){
+		var url;
+		Meteor.call("getImageURL", Meteor.user().services.google.id, function(error,results){
+			var jsondecoded = json_decode(results.content);
+			url = jsondecoded.image.url;
+		});
+		return url;
 	}
 })
 
