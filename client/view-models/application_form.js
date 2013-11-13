@@ -120,6 +120,17 @@ Template.index.events({
 	}
 });
 
+Template.partnership.events({
+	'click #YTconnect': function(e,t){
+		Meteor.loginWithGoogle({
+			requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/yt-analytics.readonly', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.readonly' , 'https://www.googleapis.com/auth/youtubepartner', 'https://www.googleapis.com/auth/youtubepartner-channel-audit', 'https://www.googleapis.com/auth/plus.me']
+		});
+		if (Meteor.user()) {
+
+		};
+	}
+});
+
 function json_decode (str_json) {	
 	var json = this.window.JSON;
 	if (typeof json === 'object' && typeof json.parse === 'function') {

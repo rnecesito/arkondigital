@@ -485,9 +485,18 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/client/templates/template.application_form.js?3504dc9e3cb8639998a3d561f051cdd04776292d",
-      "size": 7766,
-      "hash": "3504dc9e3cb8639998a3d561f051cdd04776292d"
+      "url": "/client/templates/template.application_form.js?4864808b788ea93058bc03bde2d6320d75390f4f",
+      "size": 7759,
+      "hash": "4864808b788ea93058bc03bde2d6320d75390f4f"
+    },
+    {
+      "path": "app/client/templates/template.application_process.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/client/templates/template.application_process.js?a166700f3764237a44d5675d71dca159d91e145b",
+      "size": 190,
+      "hash": "a166700f3764237a44d5675d71dca159d91e145b"
     },
     {
       "path": "app/client/templates/template.contact.js",
@@ -521,9 +530,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/client/templates/template.index.js?0cbfdf151b3617afe0f71057328ba389d012fd99",
-      "size": 2097,
-      "hash": "0cbfdf151b3617afe0f71057328ba389d012fd99"
+      "url": "/client/templates/template.index.js?1e431f2c292fdd17df158cb1b2688aecacfdc242",
+      "size": 2209,
+      "hash": "1e431f2c292fdd17df158cb1b2688aecacfdc242"
     },
     {
       "path": "app/client/templates/template.login.js",
@@ -539,9 +548,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/client/templates/template.navbar.js?8c4e876304896443788b5f9550e4cc94460c47c5",
-      "size": 1511,
-      "hash": "8c4e876304896443788b5f9550e4cc94460c47c5"
+      "url": "/client/templates/template.navbar.js?b303b4b39650dc911ed5393959e54975f33e14f7",
+      "size": 1454,
+      "hash": "b303b4b39650dc911ed5393959e54975f33e14f7"
     },
     {
       "path": "app/client/templates/template.oauth.js",
@@ -557,9 +566,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/client/templates/template.partnership.js?293f99dcfca0568bc53d6de3c7d8013ebba6fe72",
-      "size": 8107,
-      "hash": "293f99dcfca0568bc53d6de3c7d8013ebba6fe72"
+      "url": "/client/templates/template.partnership.js?fea9db9cb1d8c84c070b30e459a25c20e6979de6",
+      "size": 392,
+      "hash": "fea9db9cb1d8c84c070b30e459a25c20e6979de6"
     },
     {
       "path": "app/client/templates/template.programs.js",
@@ -620,9 +629,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/client/view-models/application_form.js?fd5a19b63ad266fdb6596ae5e48f474e922c1923",
-      "size": 5549,
-      "hash": "fd5a19b63ad266fdb6596ae5e48f474e922c1923"
+      "url": "/client/view-models/application_form.js?c536aefc928283c6dec2d52d7950e8bd69fa49db",
+      "size": 6039,
+      "hash": "c536aefc928283c6dec2d52d7950e8bd69fa49db"
     },
     {
       "path": "app/client/view-models/partnership.js",
@@ -638,9 +647,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/client/client.js?8ea707b7e7533240c621905be1f021db0a3378bd",
-      "size": 1342,
-      "hash": "8ea707b7e7533240c621905be1f021db0a3378bd"
+      "url": "/client/client.js?bf7871d8f65e56fe0921b1b0099800eb449f5a55",
+      "size": 1409,
+      "hash": "bf7871d8f65e56fe0921b1b0099800eb449f5a55"
     },
     {
       "path": "app/client/design.2.js",
@@ -737,9 +746,9 @@
       "where": "client",
       "type": "css",
       "cacheable": true,
-      "url": "/client/css/main.css?cc653328628702dcbf633657da64c196038a6ec7",
-      "size": 6319,
-      "hash": "cc653328628702dcbf633657da64c196038a6ec7"
+      "url": "/client/css/main.css?e3bfea1d2b0147d89161273bf3119afa7ef2379f",
+      "size": 7929,
+      "hash": "e3bfea1d2b0147d89161273bf3119afa7ef2379f"
     },
     {
       "path": "packages/bootstrap-3/bootstrap-3/fonts/glyphicons-halflings-regular.eot",
@@ -1507,9 +1516,18 @@
       "hash": "206d53f4f860cb7fa549977141fe8990d3d356b5"
     },
     {
+      "path": "app/youtube_icon.png",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/youtube_icon.png",
+      "size": 66502,
+      "hash": "64e2bcc800cfa5d7d34f612fa969bd21037c47db"
+    },
+    {
       "path": "app.html",
       "where": "internal",
-      "hash": "f648748b053a458631afa8724f6207b62245ea44"
+      "hash": "9e554abbda08a53785d8a299efeedc38bc5c3f8e"
     }
   ]
 }

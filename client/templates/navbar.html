@@ -1,21 +1,21 @@
 <template name="navbarmain">
-	<div class="navbar navbar-inverse navbar-style">
-		<div class="row col-lg-4 nav-social-icons">
-				<!-- <a class="navbar-brand" href="/">
-				</a> -->
-			<div class="row">
-				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav custom-nav-lower">
-						<a href="{{pathFor 'index'}}">
-							<li class="nav-li menu-li" id="index">
-								ArkonDigital
-							</li>
-						</a>
-						<!-- <a href="{{pathFor 'about'}}">
-							<li class="nav-li menu-li" id="about">
-								Login
-							</li>
-						</a> -->
+	<div id="main-nav">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="nav-wrap">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>		
+					<a class="navbar-brand" href="{{pathFor 'index'}}">
+						<img src="arkon2.png">
+					</a>
+				</div>
+				<div class="collapse navbar-collapse navbar-ex1-collapse">                           
+						<!-- <a id="explore" href="#lt-pulse" class="navbar-link">Explore</a> -->
+					<div class="nav-list">
 						<a href="{{pathFor 'partnership'}}">
 							<li class="nav-li menu-li" id="partnership">
 								Apply for Partnership
@@ -26,16 +26,9 @@
 								YouTube
 							</li>
 						</a>
-						<!-- {{#if currentUser}}
-						<li class="nav-li menu-li">
-								<span><input class="logoutButton" value="Logout"></span>
-							</li>
-						{{else}}
-						
-						{{/if}} -->
-					</ul>
+					</div>
 				</div>
 			</div>
-		</div>
+		</nav>
 	</div>
 </template>

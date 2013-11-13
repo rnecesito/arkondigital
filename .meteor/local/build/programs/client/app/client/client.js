@@ -27,6 +27,7 @@ Router.map(function(){
 	this.route('blacklisted', {path: '/admin/blacklisted'});
 	this.route('completed', {path: '/admin/completed'});
 	this.route('dashboard', {path: '/dashboard'});
+	this.route('application_process',{path: '/application_process'});
 });
 
 })();
