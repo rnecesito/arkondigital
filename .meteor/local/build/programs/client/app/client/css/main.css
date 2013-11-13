@@ -136,7 +136,7 @@ body, h1, h2, h3, h4, h5 {
 	width: 980px;
 	background: #BBBBBB;
 	border-radius: 3px;
-	padding: 30px;
+	padding: 0 30px 30px;
 }
 
 .fit-pic img {
@@ -610,4 +610,8 @@ body, h1, h2, h3, h4, h5 {
 	-moz-transition: 100ms linear 0s;
 	-o-transition: 100ms linear 0s;
 	transition: 100ms linear 0s;
+}
+
+.hidden-div-container{
+	display: none;
 }

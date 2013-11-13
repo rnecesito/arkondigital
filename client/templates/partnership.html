@@ -17,13 +17,13 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-7">
+				<div class="col-xs-6">
 						<span>Youtube Channel</span><br>
 				    	<span>Daily Views</span><br>
 				    	<span>Total Upload Views</span><br>
 				    	<span>Total Subscribers</span><br>
 			    </div>
-			    <div class="col-xs-5">
+			    <div class="col-xs-6">
 			     		<span id="yt_channel_name2" class="left-space">-</span><br>
 			     		<span id="yt_daily_views2" class="left-space">-</span><br>
 			     		<span id="yt_total_views2" class="left-space">-</span><br>
@@ -46,7 +46,7 @@
 		<div class="container-personal-info hidden-div-container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2>Personal Info</h2>
+					<h2>You Qualified!</h2><span>Please input the following information to continue.</span>
 				</div>
 			</div>
 			<div class="row">
@@ -375,6 +375,26 @@
 			    </div><!-- /.modal-content -->
 			  </div><!-- /.modal-dialog -->
 			</div><!-- /.modal -->
+		</div>
+
+		<div class="container-denied hidden-div-container">
+			{{#if currentUser}}
+			<img src="{{googleImage}}">
+			<h2>{{currentUser.profile.name}}</h2>
+			{{else}}<br>{{/if}}
+			<span>Thank you very much for your application. After careful review and consideration, we have determinded that your channel does not meet the qualifications for partnership this time. Some of the possible reasons are:</span>
+			<ul>
+				<li>Low Viewership</li>
+				<li>Copyright Issues</li>
+				<li>Strikes</li>
+				<li>Adsense Deactivation</li>
+			</ul>
+			<span>If you feel that you have fixed this situation, please feel free to reapply.</span>
+			<a href="{{pathFor 'index'}}">Go back to Homepage</a>
+		</div>
+
+		<div class="container-accepted hidden-div-container">
+
 		</div>
 	</div>
 </template>

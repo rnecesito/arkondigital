@@ -204,6 +204,14 @@ Template.partnership.helpers({
 	},
 	youtubeInfo: function(email){
 
+	},
+	googleImage: function(){
+		var url;
+		Meteor.call("getImageURL", Meteor.user().services.google.id, function(error,results){
+			var jsondecoded = json_decode(results.content);
+			url = jsondecoded.image.url;
+		});
+		return url;
 	}
 })
 
