@@ -530,6 +530,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
+      "url": "/client/templates/template.index.js?07ee5f4357470167d644c376cbbea37beaf2e1a5",
+      "size": 4832,
+      "hash": "07ee5f4357470167d644c376cbbea37beaf2e1a5"
     },
     {
       "path": "app/client/templates/template.login.js",
@@ -545,6 +548,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
+      "url": "/client/templates/template.navbar.js?581dab57dff49a92a42466663e82d6df27242f49",
+      "size": 1634,
+      "hash": "581dab57dff49a92a42466663e82d6df27242f49"
     },
     {
       "path": "app/client/templates/template.oauth.js",
@@ -560,6 +566,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
+      "url": "/client/templates/template.partnership.js?cc61a3bf8c75099772a63b20054d048abef44dc1",
+      "size": 19552,
+      "hash": "cc61a3bf8c75099772a63b20054d048abef44dc1"
     },
     {
       "path": "app/client/templates/template.programs.js",
@@ -620,12 +629,18 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
+      "url": "/client/view-models/application_form.js?c69add8da980ba36abd7babf948560d56eaa7e6f",
+      "size": 8160,
+      "hash": "c69add8da980ba36abd7babf948560d56eaa7e6f"
     },
     {
       "path": "app/client/view-models/partnership.js",
       "where": "client",
       "type": "js",
       "cacheable": true,
+      "url": "/client/view-models/partnership.js?f67d1b8621c4a9249924c0489ca332b1e405aa5e",
+      "size": 10718,
+      "hash": "f67d1b8621c4a9249924c0489ca332b1e405aa5e"
     },
     {
       "path": "app/client/client.js",
@@ -731,6 +746,9 @@
       "where": "client",
       "type": "css",
       "cacheable": true,
+      "url": "/client/css/main.css?9fb03ef7ce664b53748b03b5779c817d954559ed",
+      "size": 10134,
+      "hash": "9fb03ef7ce664b53748b03b5779c817d954559ed"
     },
     {
       "path": "packages/bootstrap-3/bootstrap-3/fonts/glyphicons-halflings-regular.eot",
@@ -868,6 +886,15 @@
       "hash": "7bc88275f1d99623505dfa0d6730978e5c65525e"
     },
     {
+      "path": "app/AppAgreement.pdf",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/AppAgreement.pdf",
+      "size": 192954,
+      "hash": "c879af1221912b1060d46b36bff292134eb24053"
+    },
+    {
       "path": "app/SidebarBackground_02.png",
       "where": "client",
       "type": "asset",
@@ -938,6 +965,15 @@
       "url": "/arkonlogo2.png",
       "size": 43068,
       "hash": "239610830f3f3eb379ba47211db652b652d57cbc"
+    },
+    {
+      "path": "app/arkonshake.gif",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/arkonshake.gif",
+      "size": 70652,
+      "hash": "b01d3b3268ece1b19dae231acbb28f129880307b"
     },
     {
       "path": "app/background.jpg",
@@ -1291,6 +1327,15 @@
       "hash": "53e7810523e30b1c99b606aa321acf38524aa885"
     },
     {
+      "path": "app/sign-up-red.gif",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/sign-up-red.gif",
+      "size": 405709,
+      "hash": "3365210d5598e913f4694545629dfad2c56c62ad"
+    },
+    {
       "path": "app/sign-up-red.jpg",
       "where": "client",
       "type": "asset",
@@ -1518,6 +1563,7 @@
     {
       "path": "app.html",
       "where": "internal",
+      "hash": "a07a4a6778c0b0f428740f44ea7783d39b10366b"
     }
   ]
 }

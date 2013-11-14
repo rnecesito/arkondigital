@@ -284,7 +284,7 @@ Template.index.rendered = function(){
 		}, 5000);
 	
 
-	})
+	});
 
 	$(document).on('click', '.second-step', function(){
     	alert("2nd step done");
@@ -296,7 +296,7 @@ Template.index.rendered = function(){
 	});
 
 	$(document).on('click', '.third-step', function(){
-		Meteor.logout();
+
     	alert("3nd step done");
     	$(".step-tab-container").children().eq(3).removeClass("step-tab-active");
     	$(".step-tab-container").children().eq(0).addClass("step-tab-active");

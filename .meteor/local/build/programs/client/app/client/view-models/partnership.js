@@ -38,6 +38,23 @@
 	
 	})
 
+	$('#agree-check').click(function () {
+   	 var x = $(this).attr("checked");
+   	 	if(x == 'checked')
+   	 	{
+   	 		$('.btn-ok').removeClass('hidden-div-container');
+   	 	}else{
+   	 		$('.btn-ok').addClass('hidden-div-container');
+   	 	}
+	});
+
+	$("#confirm-btn").click(function(){
+		alert("Thank you for applying to be our partner. Our staff will contact you soon!");
+		Meteor.logout();
+		window.location.replace("http://arkondigital.meteor.com/");
+
+	})
+
 	$("#personal-btn2").click(function(){
 		
 		var channel = $("#yt_channel_name2").text();
@@ -46,13 +63,14 @@
 		var subscribers = $("#yt_subscribers2").text();
 		var profile = $("#profile-google").text();
 		var age = $("#yt_age").attr("value");
-		var residence = $("#yt_country").attr("value");
+		var residence = $("#countries").attr("value");
 		var firstname = $("#parent_firstname").attr("value");
 		var lastname = $("#parent_lastname").attr("value");
 		var phone = $("#parent_phone").attr("value");
 		var copyright = $("#cr_status").attr("value");
+		var paypal = $("#paypal").attr("value");
+		
 
-		console.log("clicked");
 		if(!$("#yt_age").val())
 		{
 			$("#yt_age").focus();
@@ -64,51 +82,70 @@
 				if($("#yt_country").val())
 				{
 
-
-					if(!$("#parent_firstname").val())
+				if($("#paypal").val()){
+					if(!$("#countries").val())
 					{
-						$("#parent_firstname").focus();
+						$("#countries").focus();	
 					}
 					else
 					{
-						if(!$("#parent_lastname").val())
+						
+						if(!$("#parent_firstname").val())
 						{
-							$("#parent_lastname").focus();
+							$("#parent_firstname").focus();
 						}
 						else
 						{
-							if(!$("#parent_phone").val())
+							if(!$("#parent_lastname").val())
 							{
-								$("#parent_phone").focus();
+								$("#parent_lastname").focus();
 							}
 							else
 							{
-								$(".container-personal-info").addClass('hidden-div-container');
-								$(".loading").removeClass('hidden-div-container');
+								if(!$("#parent_phone").val())
+								{
+									$("#parent_phone").focus();
+								}
+								else
+								{
+									$(".container-personal-info").addClass('hidden-div-container');
+									$('.container-accepted ').removeClass('hidden-div-container');
+									$("#fname").attr("value",channel);
+									$("#fmail").attr("value",profile);
+									$("#fpaypal").attr("value",paypal);
+									$("#fyt").attr("value",profile);
+									$("#fytc").attr("value", channel);
+								}
 							}
 						}
 					}
-				}
-				else
-				{
-					$("#yt_country").focus();	
+				}else{
+					$("#paypal").focus();
 				}
 			}
 			else
 			{
-	
-				if(!$("#yt_country").val())
-				{
-					$("#yt_country").focus();
-				}
-				else
-				{
-					$(".container-personal-info").addClass('hidden-div-container');
-
+				if(!$("#paypal").val()){
+					$("#paypal").focus();
+				}else{
+					if(!$("#countries").val())
+					{
+						$("#countries").focus();
+					}
+					else
+					{
+						$(".container-personal-info").addClass('hidden-div-container');
+						$('.container-accepted ').removeClass('hidden-div-container');
+							$("#fname").attr("value", channel);
+							$("#fmail").attr("value",profile);
+							$("#fpaypal").attr("value",paypal);
+							$("#fyt").attr("value",profile);
+							$("#fytc").attr("value",channel);
+					}
 				}
 			}
 			
-	
+		}
 		}
 	})
 
@@ -120,6 +157,7 @@
 	        $(this).find(".hover-step").fadeOut();
 	    });        
 	});
+
 	if(Meteor.user()){
 		Meteor.call("checkYT2", Meteor.user().services.google.accessToken, function(error,results){
 			var jsondecoded = json_decode(results.content);
@@ -209,6 +247,64 @@ Template.partnership.events({
 		}
 	}
 });
+
+Template.index.rendered = function(){
+/*	$("#partnership").click(function(){
+		$('#application-modal-form').modal('show');
+	});	*/
+
+	$(document).on('click', '.first-step', function(){
+		var daily_views = $("#yt_daily_views2").text();
+		var total_views = $("#yt_total_views2").text();
+		var subscribers = $("#yt_subscribers2").text();
+		var copyright = $("#cr_status").attr("value");
+		setTimeout(function(){
+			$(".loading").removeClass('hidden-div-container');
+			$(".yt-stats-container").addClass('hidden-div-container');
+			$(".step-tab-container").children().eq(0).removeClass("step-tab-active");
+			$(".step-tab-container").children().eq(1).addClass("step-tab-active");	
+		}, 1000);
+
+		setTimeout(function(){
+
+			if(daily_views >= 100 && total_views >= 100 && subscribers >= 1 && copyright)
+			{
+				alert("kapasar");
+				$(".loading").addClass('hidden-div-container');
+				$(".step-tab-container").children().eq(1).removeClass("step-tab-active");	
+				$(".step-tab-container").children().eq(2).addClass("step-tab-active");	
+				$("#next-tab-btn").removeClass('first-step');
+				$("#next-tab-btn").addClass('second-step');
+			}
+			else
+			{
+					
+			}
+
+		}, 5000);
+	
+
+	});
+
+	$(document).on('click', '.second-step', function(){
+    	alert("2nd step done");
+    	$(".step-tab-container").children().eq(2).removeClass("step-tab-active");
+    	$(".step-tab-container").children().eq(3).addClass("step-tab-active");
+    	$("#next-tab-btn").removeClass('second-step');
+		$("#next-tab-btn").addClass('third-step');
+    	
+	});
+
+	$(document).on('click', '.third-step', function(){
+
+    	alert("3nd step done");
+    	$(".step-tab-container").children().eq(3).removeClass("step-tab-active");
+    	$(".step-tab-container").children().eq(0).addClass("step-tab-active");
+    	$("#next-tab-btn").removeClass('third-step');
+		$("#next-tab-btn").addClass('first-step');
+    	$("#application-modal-form").modal('hide');
+	});
+}
 
 Template.partnership.helpers({
 	youtubeUser: function(){
