@@ -36,7 +36,7 @@ Template.partnership.rendered = function(){
 			$(".container-denied").removeClass('hidden-div-container');								
 		}
 	
-	});
+	})
 
 	$('#agree-check').click(function () {
    	 var x = $(this).attr("checked");

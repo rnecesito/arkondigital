@@ -36,23 +36,6 @@
 			$(".container-denied").removeClass('hidden-div-container');								
 		}
 	
-	});
-
-	$('#agree-check').click(function () {
-   	 var x = $(this).attr("checked");
-   	 	if(x == 'checked')
-   	 	{
-   	 		$('.btn-ok').removeClass('hidden-div-container');
-   	 	}else{
-   	 		$('.btn-ok').addClass('hidden-div-container');
-   	 	}
-	});
-
-	$("#confirm-btn").click(function(){
-		alert("Thank you for applying to be our partner. Our staff will contact you soon!");
-		Meteor.logout();
-		window.location.replace("http://arkondigital.meteor.com/");
-
 	})
 
 	$("#personal-btn2").click(function(){
@@ -63,14 +46,13 @@
 		var subscribers = $("#yt_subscribers2").text();
 		var profile = $("#profile-google").text();
 		var age = $("#yt_age").attr("value");
-		var residence = $("#countries").attr("value");
+		var residence = $("#yt_country").attr("value");
 		var firstname = $("#parent_firstname").attr("value");
 		var lastname = $("#parent_lastname").attr("value");
 		var phone = $("#parent_phone").attr("value");
 		var copyright = $("#cr_status").attr("value");
-		var paypal = $("#paypal").attr("value");
-		
 
+		console.log("clicked");
 		if(!$("#yt_age").val())
 		{
 			$("#yt_age").focus();
@@ -82,70 +64,51 @@
 				if($("#yt_country").val())
 				{
 
-				if($("#paypal").val()){
-					if(!$("#countries").val())
+
+					if(!$("#parent_firstname").val())
 					{
-						$("#countries").focus();	
+						$("#parent_firstname").focus();
 					}
 					else
 					{
-						
-						if(!$("#parent_firstname").val())
+						if(!$("#parent_lastname").val())
 						{
-							$("#parent_firstname").focus();
+							$("#parent_lastname").focus();
 						}
 						else
 						{
-							if(!$("#parent_lastname").val())
+							if(!$("#parent_phone").val())
 							{
-								$("#parent_lastname").focus();
+								$("#parent_phone").focus();
 							}
 							else
 							{
-								if(!$("#parent_phone").val())
-								{
-									$("#parent_phone").focus();
-								}
-								else
-								{
-									$(".container-personal-info").addClass('hidden-div-container');
-									$('.container-accepted ').removeClass('hidden-div-container');
-									$("#fname").attr("value",channel);
-									$("#fmail").attr("value",profile);
-									$("#fpaypal").attr("value",paypal);
-									$("#fyt").attr("value",profile);
-									$("#fytc").attr("value", channel);
-								}
+								$(".container-personal-info").addClass('hidden-div-container');
+								$(".loading").removeClass('hidden-div-container');
 							}
 						}
 					}
-				}else{
-					$("#paypal").focus();
+				}
+				else
+				{
+					$("#yt_country").focus();	
 				}
 			}
 			else
 			{
-				if(!$("#paypal").val()){
-					$("#paypal").focus();
-				}else{
-					if(!$("#countries").val())
-					{
-						$("#countries").focus();
-					}
-					else
-					{
-						$(".container-personal-info").addClass('hidden-div-container');
-						$('.container-accepted ').removeClass('hidden-div-container');
-							$("#fname").attr("value", channel);
-							$("#fmail").attr("value",profile);
-							$("#fpaypal").attr("value",paypal);
-							$("#fyt").attr("value",profile);
-							$("#fytc").attr("value",channel);
-					}
+	
+				if(!$("#yt_country").val())
+				{
+					$("#yt_country").focus();
+				}
+				else
+				{
+					$(".container-personal-info").addClass('hidden-div-container');
+
 				}
 			}
 			
-		}
+	
 		}
 	})
 
@@ -157,7 +120,6 @@
 	        $(this).find(".hover-step").fadeOut();
 	    });        
 	});
-
 	if(Meteor.user()){
 		Meteor.call("checkYT2", Meteor.user().services.google.accessToken, function(error,results){
 			var jsondecoded = json_decode(results.content);
@@ -247,60 +209,6 @@ Template.partnership.events({
 		}
 	}
 });
-
-Template.index.rendered = function(){
-/*	$("#partnership").click(function(){
-		$('#application-modal-form').modal('show');
-	});	*/
-	$("#next-tab-btn").click(function(){
-		var daily_views = $("#yt_daily_views2").text();
-		var total_views = $("#yt_total_views2").text();
-		var subscribers = $("#yt_subscribers2").text();
-		var copyright = $("#cr_status").attr("value");
-		alert(copyright);
-		alert(daily_views);
-		alert(total_views);
-		alert(subscribers);
-
-		setTimeout(function(){
-			if(daily_views >= 100 && total_views >= 100 && subscribers >= 1 && copyright)
-			{
-				alert("kapasar");
-				/*$(".container-youtube-stats").addClass('hidden-div-container');
-				$(".container-personal-info").removeClass('hidden-div-container');	*/
-				$(".loading").removeClass('hidden-div-container');
-				$(".yt-stats-container").addClass('hidden-div-container');
-				$(".step-tab-container").children().eq(0).removeClass("step-tab-active");
-				$(".step-tab-container").children().eq(1).addClass("step-tab-active");		
-			}
-			else
-			{
-				setTimeout(function(){
-				$(".step-tab-container").children().eq(2).addClass("step-tab-active");
-				}, 10000);
-				setTimeout(function(){
-					$(".step-tab-container").children().eq(3).addClass("step-tab-active");
-				}, 10000);							
-			}
-
-		}, 20000)
-	
-		/*$("div.step-tab-container :last-child").addClass("step-tab-active");*/
-		
-	/*	setTimeout(function(){
-			$(".step-tab-container").children().eq(1).addClass("step-tab-active");
-		}, 10000);
-		setTimeout(function(){
-			$(".step-tab-container").children().eq(2).addClass("step-tab-active");
-		}, 10000);
-		setTimeout(function(){
-			$(".step-tab-container").children().eq(3).addClass("step-tab-active");
-		}, 10000);*/
-
-	/*	$("div.step-tab-container").children("div:nth-child(1)").children("div.step-tab").addClass("step-tab-active");*/
-
-	})
-}
 
 Template.partnership.helpers({
 	youtubeUser: function(){

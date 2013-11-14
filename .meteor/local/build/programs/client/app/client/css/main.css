@@ -135,16 +135,9 @@ body, h1, h2, h3, h4, h5 {
 	min-height: 270px;
 	width: 980px;
 	background: white;
-<<<<<<< HEAD
-	border-radius: 3px;
-	border-width: 2px;
-	padding: 0 30px 30px;
-
-=======
 	padding: 0 30px 30px;
 	border-radius: 3px;
 	border-width: 2px;
->>>>>>> 80efc3d6f0d31ad9b21435326baae97ccdc4c7a2
 }
 
 .fit-pic img {
@@ -683,8 +676,7 @@ body, h1, h2, h3, h4, h5 {
 }
 
 .arkon-content fieldset {
-	height: 240px;
-	padding-top: 20x;
+	/*height: 240px;*/
 }
 .step-tab{
 	background: #CCC;
