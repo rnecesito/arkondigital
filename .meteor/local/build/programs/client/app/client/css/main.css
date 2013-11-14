@@ -135,9 +135,16 @@ body, h1, h2, h3, h4, h5 {
 	min-height: 270px;
 	width: 980px;
 	background: white;
+<<<<<<< HEAD
+	border-radius: 3px;
+	border-width: 2px;
+	padding: 0 30px 30px;
+
+=======
 	padding: 0 30px 30px;
 	border-radius: 3px;
 	border-width: 2px;
+>>>>>>> 80efc3d6f0d31ad9b21435326baae97ccdc4c7a2
 }
 
 .fit-pic img {
@@ -612,7 +619,27 @@ body, h1, h2, h3, h4, h5 {
 	display: none;
 }
 
+.arkon-center {
+	margin-left: 10%;
+}
 
+.contract-padding {
+	padding: 0 60px 0;
+}
+
+#agree-btn{
+	margin-left: 55%;
+	margin-top: 10px;
+	padding: 10px;
+	width: 100%;
+	background: #df0a0a;
+	background-image: -webkit-linear-gradient(top,rgba(255,255,255,.05)0%,rgba (0,0,0,.1)100%);
+	box-shadow: 0 1px 3px rgba(0,0,0,.5);
+	padding: 13px;
+	color: #FFF;
+	border-radius: 6px;
+	font-weight: 700;
+}
 /* NEW structure layout ARKON */
 
 .container {
@@ -657,4 +684,18 @@ body, h1, h2, h3, h4, h5 {
 
 .arkon-content fieldset {
 	/*height: 240px;*/
+}
+.step-tab{
+	background: #CCC;
+	margin: 0px auto;
+	text-align: center;
+	padding: 8px;
+	border: 1px solid #FFF;
+}
+
+.step-tab-active{
+	background: #41BAEC;
+}
+.loading{
+	margin: 0px auto;
 }

@@ -15,9 +15,53 @@ Template.partnership.rendered = function(){
 		}
 	});
 
+
+
 	$("#personal-btn").click(function(){
-		$(".container-youtube-stats").addClass('hidden-div-container');
-		$(".container-personal-info").removeClass('hidden-div-container');
+
+<<<<<<< HEAD
+	$('#application-modal').modal('toggle');
+=======
+
+>>>>>>> 80efc3d6f0d31ad9b21435326baae97ccdc4c7a2
+		var daily_views = $("#yt_daily_views2").text();
+		var total_views = $("#yt_total_views2").text();
+		var subscribers = $("#yt_subscribers2").text();
+		var copyright = $("#cr_status").attr("value");
+
+		if(daily_views >= 100 && total_views >= 100 && subscribers >= 1 && copyright)
+		{
+			
+			$(".container-youtube-stats").addClass('hidden-div-container');
+			$(".container-personal-info").removeClass('hidden-div-container');	
+					
+		}
+		else
+		{
+			$(".container-youtube-stats").addClass('hidden-div-container');
+			$(".container-denied").removeClass('hidden-div-container');								
+		}
+	
+<<<<<<< HEAD
+	})
+
+	$('#agree-check').click(function () {
+   	 var x = $(this).attr("checked");
+   	 	if(x == 'checked')
+   	 	{
+   	 		$('.btn-ok').removeClass('hidden-div-container');
+   	 	}else{
+   	 		$('.btn-ok').addClass('hidden-div-container');
+   	 	}
+	});
+
+	$("#confirm-btn").click(function(){
+		alert("Thank you for applying to be our partner. Our staff will contact you soon!");
+		Meteor.logout();
+		window.location.replace("http://arkondigital.meteor.com/");
+
+=======
+>>>>>>> 80efc3d6f0d31ad9b21435326baae97ccdc4c7a2
 	})
 
 	$("#personal-btn2").click(function(){
@@ -28,11 +72,17 @@ Template.partnership.rendered = function(){
 		var subscribers = $("#yt_subscribers2").text();
 		var profile = $("#profile-google").text();
 		var age = $("#yt_age").attr("value");
-		var residence = $("#yt_country").attr("value");
+		var residence = $("#countries").attr("value");
 		var firstname = $("#parent_firstname").attr("value");
 		var lastname = $("#parent_lastname").attr("value");
 		var phone = $("#parent_phone").attr("value");
 		var copyright = $("#cr_status").attr("value");
+<<<<<<< HEAD
+		var paypal = $("#paypal").attr("value");
+=======
+
+		console.log("clicked");
+>>>>>>> 80efc3d6f0d31ad9b21435326baae97ccdc4c7a2
 		if(!$("#yt_age").val())
 		{
 			$("#yt_age").focus();
@@ -41,41 +91,69 @@ Template.partnership.rendered = function(){
 
 			if(age < 18)
 			{
-				if($("#yt_country").val())
-				{
 
-
-					if(!$("#parent_firstname").val())
+				if($("#paypal").val()){
+					if(!$("#countries").val())
 					{
-						$("#parent_firstname").focus();
+						$("#countries").focus();	
 					}
 					else
 					{
-						if(!$("#parent_lastname").val())
+						
+						if(!$("#parent_firstname").val())
 						{
-							$("#parent_lastname").focus();
+							$("#parent_firstname").focus();
 						}
 						else
 						{
-							if(!$("#parent_phone").val())
+							if(!$("#parent_lastname").val())
 							{
-								$("#parent_phone").focus();
+								$("#parent_lastname").focus();
 							}
 							else
 							{
-								$(".container-personal-info").addClass('hidden-div-container');
-								$(".loading").removeClass('hidden-div-container');
+								if(!$("#parent_phone").val())
+								{
+									$("#parent_phone").focus();
+								}
+								else
+								{
+									$(".container-personal-info").addClass('hidden-div-container');
+									$('.container-accepted ').removeClass('hidden-div-container');
+									$("#fname").attr("value",channel);
+									$("#fmail").attr("value",profile);
+									$("#fpaypal").attr("value",paypal);
+									$("#fyt").attr("value",profile);
+									$("#fytc").attr("value", channel);
+								}
 							}
 						}
 					}
-				}
-				else
-				{
-					$("#yt_country").focus();	
+				}else{
+					$("#paypal").focus();
 				}
 			}
 			else
 			{
+<<<<<<< HEAD
+				if(!$("#paypal").val()){
+					$("#paypal").focus();
+				}else{
+					if(!$("#countries").val())
+					{
+						$("#countries").focus();
+					}
+					else
+					{
+						$(".container-personal-info").addClass('hidden-div-container');
+						$('.container-accepted ').removeClass('hidden-div-container');
+							$("#fname").attr("value", channel);
+							$("#fmail").attr("value",profile);
+							$("#fpaypal").attr("value",paypal);
+							$("#fyt").attr("value",profile);
+							$("#fytc").attr("value",channel);
+					}
+=======
 	
 				if(!$("#yt_country").val())
 				{
@@ -83,15 +161,11 @@ Template.partnership.rendered = function(){
 				}
 				else
 				{
-					if(daily_views >= 1000 && total_views >= 1000000 && subscribers >= 1000 && copyright){
-						alert("YOUR QUALIFIED TO BE A PORNSTAR");
-					}else{
-						alert("Sorry, You're not QUALIFIED TO BE A PORNSTAR");
-						
-					}
-				/*	$(".container-personal-info").addClass('hidden-div-container');
-					$(".loading").removeClass('hidden-div-container');*/
+					$(".container-personal-info").addClass('hidden-div-container');
+
+>>>>>>> 80efc3d6f0d31ad9b21435326baae97ccdc4c7a2
 				}
+			
 			}
 			
 	
@@ -120,16 +194,8 @@ Template.partnership.rendered = function(){
 	    	$('#yt_channel_subscribers').val(jsondecoded.items[0].statistics.subscriberCount);
 	    	$('#yt_subscribers2').html(jsondecoded.items[0].statistics.subscriberCount);
 	    	$('#cr_status').val(jsondecoded.items[0].auditDetails.overallGoodStanding);
-<<<<<<< HEAD
-	    	$('.connect-to-youtube').addClass('hidden-div-container');
-	    	$('.container-youtube-stats').removeClass('hidden-div-container');
-=======
 	    	$('#youtube_btn_container').addClass('hidden-div-container');
-<<<<<<< HEAD
 	    	$(".container-youtube-stats").removeClass('hidden-div-container');
-=======
->>>>>>> a69d90a470879a7872e6f75bb1c304551a5f2140
->>>>>>> a1439f205a2b0f96971b9ff5713ddc9a596be966
 	    	// if(jsondecoded.items[0].auditDetails.overallGoodStanding === true){
 	    	// 	$('.cr-status').val("In Good Standing");
 	    	// }else{
@@ -203,6 +269,12 @@ Template.partnership.events({
 		}
 	}
 });
+
+Template.index.rendered = function(){
+/*	$("#partnership").click(function(){
+		$('#application-modal-form').modal('show');
+	});	*/
+}
 
 Template.partnership.helpers({
 	youtubeUser: function(){

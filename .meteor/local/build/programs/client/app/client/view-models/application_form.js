@@ -40,6 +40,7 @@ Template.partnership.events({
 		Meteor.loginWithGoogle({
 			requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/yt-analytics.readonly', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.readonly' , 'https://www.googleapis.com/auth/youtubepartner', 'https://www.googleapis.com/auth/youtubepartner-channel-audit', 'https://www.googleapis.com/auth/plus.me', 'https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email','https://www.googleapis.com/auth/plus.login']
 		});
+
 	},
 	'click .logoutButton': function(e,t){
 		Meteor.logout(function(err){
@@ -111,12 +112,78 @@ Template.application_form.helpers({
 
 Template.index.events({
 	'click .YT-button': function(e,t){
+		alert("Bogo");
 		Meteor.loginWithGoogle({
 			requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/yt-analytics.readonly', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.readonly' , 'https://www.googleapis.com/auth/youtubepartner', 'https://www.googleapis.com/auth/youtubepartner-channel-audit', 'https://www.googleapis.com/auth/plus.me','https://www.googleapis.com/auth/plus.login']
+		}, function(err){
+
+			
 		});
 		if (Meteor.user()) {
-
+		
 		};
+
+			$('#application-modal-form').modal('show');
+	},
+
+
+
+	
+
+
+});
+
+Template.index.rendered = function(){
+
+}
+
+Template.navbarmain.events({
+	'click #partnership-nav': function(e,t){
+		Meteor.loginWithGoogle({
+			requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/yt-analytics.readonly', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.readonly' , 'https://www.googleapis.com/auth/youtubepartner', 'https://www.googleapis.com/auth/youtubepartner-channel-audit', 'https://www.googleapis.com/auth/plus.me','https://www.googleapis.com/auth/plus.login']
+		}, function(status){
+			console.log(status);
+
+				if(Meteor.user()){
+					Meteor.call("checkYT2", Meteor.user().services.google.accessToken, function(error,results){
+						var jsondecoded = json_decode(results.content);
+						console.log(jsondecoded);
+						$('#yt_channel_id').val(jsondecoded.items[0].id);
+						$('#yt_channel_name').val(jsondecoded.items[0].snippet.title);
+						$('#yt_channel_name2').html(jsondecoded.items[0].snippet.title);
+				    	$('#yt_channel_daily_views').val(jsondecoded.items[0].statistics.viewCount);
+				    	$('#yt_daily_views2').html(jsondecoded.items[0].statistics.viewCount);
+				    	$('#yt_channel_total_views').val(jsondecoded.items[0].statistics.viewCount);
+				    	$('#yt_total_views2').html(jsondecoded.items[0].statistics.viewCount);
+				    	$('#yt_channel_subscribers').val(jsondecoded.items[0].statistics.subscriberCount);
+				    	$('#yt_subscribers2').html(jsondecoded.items[0].statistics.subscriberCount);
+				    	$('#cr_status').val(jsondecoded.items[0].auditDetails.overallGoodStanding);
+				    	$('#youtube_btn_container').addClass('hidden-div-container');
+				    	$(".container-youtube-stats").removeClass('hidden-div-container');
+				    	// if(jsondecoded.items[0].auditDetails.overallGoodStanding === true){
+				    	// 	$('.cr-status').val("In Good Standing");
+				    	// }else{
+				    	// 	$('.cr-status').val("Not In Good Standing");
+				    	// }
+					});
+					Meteor.call("getInfo", Meteor.user().services.google.id, Meteor.user().services.google.accessToken, function(error,results){
+						var jsondecoded = json_decode(results.content);
+						console.log(jsondecoded);
+					})
+				}	
+				if(status)
+				{
+					alert("dawd");
+					$('#application-modal-form').modal('show');
+				
+				}
+				else
+				{	
+					alert("Hide");
+					$('#application-modal-form').modal('hide');
+				}
+			
+		});
 	}
 });
 

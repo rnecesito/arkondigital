@@ -36,7 +36,7 @@ Template.partnership.rendered = function(){
 			$(".container-denied").removeClass('hidden-div-container');								
 		}
 	
-	})
+	});
 
 	$('#agree-check').click(function () {
    	 var x = $(this).attr("checked");
@@ -69,6 +69,8 @@ Template.partnership.rendered = function(){
 		var phone = $("#parent_phone").attr("value");
 		var copyright = $("#cr_status").attr("value");
 		var paypal = $("#paypal").attr("value");
+		
+
 		if(!$("#yt_age").val())
 		{
 			$("#yt_age").focus();
@@ -143,7 +145,7 @@ Template.partnership.rendered = function(){
 				}
 			}
 			
-	
+		}
 		}
 	})
 
@@ -155,6 +157,7 @@ Template.partnership.rendered = function(){
 	        $(this).find(".hover-step").fadeOut();
 	    });        
 	});
+
 	if(Meteor.user()){
 		Meteor.call("checkYT2", Meteor.user().services.google.accessToken, function(error,results){
 			var jsondecoded = json_decode(results.content);
@@ -249,6 +252,54 @@ Template.index.rendered = function(){
 /*	$("#partnership").click(function(){
 		$('#application-modal-form').modal('show');
 	});	*/
+	$("#next-tab-btn").click(function(){
+		var daily_views = $("#yt_daily_views2").text();
+		var total_views = $("#yt_total_views2").text();
+		var subscribers = $("#yt_subscribers2").text();
+		var copyright = $("#cr_status").attr("value");
+		alert(copyright);
+		alert(daily_views);
+		alert(total_views);
+		alert(subscribers);
+
+		setTimeout(function(){
+			if(daily_views >= 100 && total_views >= 100 && subscribers >= 1 && copyright)
+			{
+				alert("kapasar");
+				/*$(".container-youtube-stats").addClass('hidden-div-container');
+				$(".container-personal-info").removeClass('hidden-div-container');	*/
+				$(".loading").removeClass('hidden-div-container');
+				$(".yt-stats-container").addClass('hidden-div-container');
+				$(".step-tab-container").children().eq(0).removeClass("step-tab-active");
+				$(".step-tab-container").children().eq(1).addClass("step-tab-active");		
+			}
+			else
+			{
+				setTimeout(function(){
+				$(".step-tab-container").children().eq(2).addClass("step-tab-active");
+				}, 10000);
+				setTimeout(function(){
+					$(".step-tab-container").children().eq(3).addClass("step-tab-active");
+				}, 10000);							
+			}
+
+		}, 20000)
+	
+		/*$("div.step-tab-container :last-child").addClass("step-tab-active");*/
+		
+	/*	setTimeout(function(){
+			$(".step-tab-container").children().eq(1).addClass("step-tab-active");
+		}, 10000);
+		setTimeout(function(){
+			$(".step-tab-container").children().eq(2).addClass("step-tab-active");
+		}, 10000);
+		setTimeout(function(){
+			$(".step-tab-container").children().eq(3).addClass("step-tab-active");
+		}, 10000);*/
+
+	/*	$("div.step-tab-container").children("div:nth-child(1)").children("div.step-tab").addClass("step-tab-active");*/
+
+	})
 }
 
 Template.partnership.helpers({

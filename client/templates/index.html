@@ -54,4 +54,61 @@
 			</div>
 		</section>
 	</div>
+
+
+	<div class="modal fade" id="application-modal-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title" id="myModalLabel">ArkonDigital - Partnership Application</h4>
+	      </div>
+	      <div class="modal-body">
+	        <div class="row step-tab-container">
+	        	<div class="col-md-3 step-tab step-tab-active">
+	        		Youtube Stats
+	        	</div>
+	        	<div class="col-md-3 step-tab">
+	        		Processing
+	        	</div>
+	        	<div class="col-md-3 step-tab">
+	        		Personal Info
+	        	</div>
+	        	<div class="col-md-3 step-tab">
+	        		Agreement
+	        	</div>
+	        	<div class="row yt-stats-container">
+					<div class="col-xs-6">
+							<span>Youtube Channel</span><br>
+					    	<span>Daily Views</span><br>
+					    	<span>Total Upload Views</span><br>
+					    	<span>Total Subscribers</span><br>
+				    </div>
+				    <div class="col-xs-6">
+				     		<span id="yt_channel_name2" class="left-space">-</span><br>
+				     		<span id="yt_daily_views2" class="left-space">-</span><br>
+				     		<span id="yt_total_views2" class="left-space">-</span><br>
+				     		<span id="yt_subscribers2" class="left-space">-</span>
+				     		<input type="hidden" id="cr_status" />
+				    </div>
+				</div>
+
+				<div class="loading hidden-div-container">
+					<img src="/loading.gif" width="160" height="160"/>
+					<div class="progress progress-striped">
+					  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+					    <span class="sr-only">80% Complete</span>
+					  </div>
+					</div>
+				</div>
+	        </div>
+
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary" id="next-tab-btn">Next</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 </template>

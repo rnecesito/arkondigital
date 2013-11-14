@@ -619,7 +619,6 @@ body, h1, h2, h3, h4, h5 {
 	display: none;
 }
 
-<<<<<<< HEAD
 .arkon-center {
 	margin-left: 10%;
 }
@@ -640,8 +639,7 @@ body, h1, h2, h3, h4, h5 {
 	color: #FFF;
 	border-radius: 6px;
 	font-weight: 700;
-=======
-
+}
 /* NEW structure layout ARKON */
 
 .container {
@@ -686,5 +684,18 @@ body, h1, h2, h3, h4, h5 {
 
 .arkon-content fieldset {
 	/*height: 240px;*/
->>>>>>> 80efc3d6f0d31ad9b21435326baae97ccdc4c7a2
+}
+.step-tab{
+	background: #CCC;
+	margin: 0px auto;
+	text-align: center;
+	padding: 8px;
+	border: 1px solid #FFF;
+}
+
+.step-tab-active{
+	background: #41BAEC;
+}
+.loading{
+	margin: 0px auto;
 }
