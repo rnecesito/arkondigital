@@ -690,7 +690,7 @@ body, h1, h2, h3, h4, h5 {
 	margin: 0px auto;
 	text-align: center;
 	padding: 8px;
-	border: 1px solid #FFF;
+	border: 1px solid transparent;
 }
 
 .step-tab-active{
