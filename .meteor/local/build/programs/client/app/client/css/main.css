@@ -445,11 +445,6 @@ body, h1, h2, h3, h4, h5 {
 	
 }*/
 
-.container {
-	width: 70%;
-	margin: 0 auto;
-}
-
 .center-logo {
 	margin-left: 8%;
 }
@@ -462,7 +457,7 @@ body, h1, h2, h3, h4, h5 {
 	padding-top: 6px;
 }
 
-.content {
+/*.content {
 	margin-top: 10px;
 }
 
@@ -482,7 +477,7 @@ body, h1, h2, h3, h4, h5 {
 	display: table;
 	content: " ";
 }
-
+*/
 .center-youtube-button {
 	margin-left: 39.5%;
 }
@@ -615,4 +610,51 @@ body, h1, h2, h3, h4, h5 {
 
 .hidden-div-container{
 	display: none;
+}
+
+
+/* NEW structure layout ARKON */
+
+.container {
+	width: 70%;
+}
+
+.arkon-header {
+	width: 100%;
+	margin-bottom: 20px;
+}
+.arkon-header .container {
+	margin-top: 10px;
+	background: #BBBBBB;
+	min-height: 50px;
+	padding-top: 10px;
+	border-radius: 4px;
+}
+
+.arkon-header .container .col-xs-12 a img {
+	width: 100%;
+}
+
+.padding-none-left {
+	padding-left: 0;
+}
+
+.padding-none-right {
+	padding-right: 0;
+}
+
+.padding-none {
+	padding: 0;
+}
+
+.arkon-content img {
+	width: 100%;
+}
+
+.arkon-content span, .arkon-content ul li {
+	line-height: 28px;
+}
+
+.arkon-content fieldset {
+	/*height: 240px;*/
 }
