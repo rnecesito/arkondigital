@@ -5,14 +5,18 @@ Accounts.loginServiceConfiguration.remove({
 Accounts.loginServiceConfiguration.insert({
 	service: "google",
 	/*clientId: "202055712427.apps.googleusercontent.com",*/
-/*	clientId: "549631676875.apps.googleusercontent.com",
-	secret:"T10y0xrG9QQ3k_9R1PCWDMSJ",*/
+	// uncomment this config when deploying to live
+/*	clientId: "1062445461634-5mj4e53ttrd3gljja4m4nr7bodsbi86f.apps.googleusercontent.com",
+	secret:"YszzdK4KpSZQO-IYdL32-UTB",*/
 	clientId: "1062445461634-b2ouqu7lfv9jjsqq87ldddo69jmjv41c.apps.googleusercontent.com",
-	secret: "E1MTt3CORkSdDls2VCGqNbTS",
+	secret:"E1MTt3CORkSdDls2VCGqNbTS",
+
+	/*clientId: "1062445461634-b2ouqu7lfv9jjsqq87ldddo69jmjv41c.apps.googleusercontent.com",
+	secret: "E1MTt3CORkSdDls2VCGqNbTS",*/
 	/*secret: "Wc9ELISnDLNZ-BBGTVbKUJ7w",*/
 
-	clientId: "1062445461634-5mj4e53ttrd3gljja4m4nr7bodsbi86f.apps.googleusercontent.com",
-	secret: "YszzdK4KpSZQO-IYdL32-UTB",
+	/*clientId: "1062445461634-5mj4e53ttrd3gljja4m4nr7bodsbi86f.apps.googleusercontent.com",
+	secret: "YszzdK4KpSZQO-IYdL32-UTB",*/
 	
 
 	responseType: "token",

@@ -15,9 +15,46 @@ Template.partnership.rendered = function(){
 		}
 	});
 
+
+
 	$("#personal-btn").click(function(){
-		$(".container-youtube-stats").addClass('hidden-div-container');
-		$(".container-personal-info").removeClass('hidden-div-container');
+
+	$('#application-modal').modal('toggle');
+		var daily_views = $("#yt_daily_views2").text();
+		var total_views = $("#yt_total_views2").text();
+		var subscribers = $("#yt_subscribers2").text();
+		var copyright = $("#cr_status").attr("value");
+
+		if(daily_views >= 100 && total_views >= 100 && subscribers >= 1 && copyright)
+		{
+			
+			$(".container-youtube-stats").addClass('hidden-div-container');
+			$(".container-personal-info").removeClass('hidden-div-container');	
+					
+		}
+		else
+		{
+			$(".container-youtube-stats").addClass('hidden-div-container');
+			$(".container-denied").removeClass('hidden-div-container');								
+		}
+	
+	})
+
+	$('#agree-check').click(function () {
+   	 var x = $(this).attr("checked");
+   	 	if(x == 'checked')
+   	 	{
+   	 		$('.btn-ok').removeClass('hidden-div-container');
+   	 	}else{
+   	 		$('.btn-ok').addClass('hidden-div-container');
+   	 	}
+	});
+
+	$("#confirm-btn").click(function(){
+		alert("Thank you for applying to be our partner. Our staff will contact you soon!");
+		Meteor.logout();
+		window.location.replace("http://arkondigital.meteor.com/");
+
 	})
 
 	$("#personal-btn2").click(function(){
@@ -28,11 +65,12 @@ Template.partnership.rendered = function(){
 		var subscribers = $("#yt_subscribers2").text();
 		var profile = $("#profile-google").text();
 		var age = $("#yt_age").attr("value");
-		var residence = $("#yt_country").attr("value");
+		var residence = $("#countries").attr("value");
 		var firstname = $("#parent_firstname").attr("value");
 		var lastname = $("#parent_lastname").attr("value");
 		var phone = $("#parent_phone").attr("value");
 		var copyright = $("#cr_status").attr("value");
+		var paypal = $("#paypal").attr("value");
 		if(!$("#yt_age").val())
 		{
 			$("#yt_age").focus();
@@ -41,57 +79,69 @@ Template.partnership.rendered = function(){
 
 			if(age < 18)
 			{
-				if($("#yt_country").val())
-				{
 
-
-					if(!$("#parent_firstname").val())
+				if($("#paypal").val()){
+					if(!$("#countries").val())
 					{
-						$("#parent_firstname").focus();
+						$("#countries").focus();	
 					}
 					else
 					{
-						if(!$("#parent_lastname").val())
+						
+						if(!$("#parent_firstname").val())
 						{
-							$("#parent_lastname").focus();
+							$("#parent_firstname").focus();
 						}
 						else
 						{
-							if(!$("#parent_phone").val())
+							if(!$("#parent_lastname").val())
 							{
-								$("#parent_phone").focus();
+								$("#parent_lastname").focus();
 							}
 							else
 							{
-								$(".container-personal-info").addClass('hidden-div-container');
-								$(".loading").removeClass('hidden-div-container');
+								if(!$("#parent_phone").val())
+								{
+									$("#parent_phone").focus();
+								}
+								else
+								{
+									$(".container-personal-info").addClass('hidden-div-container');
+									$('.container-accepted ').removeClass('hidden-div-container');
+									$("#fname").attr("value",channel);
+									$("#fmail").attr("value",profile);
+									$("#fpaypal").attr("value",paypal);
+									$("#fyt").attr("value",profile);
+									$("#fytc").attr("value", channel);
+								}
 							}
 						}
 					}
-				}
-				else
-				{
-					$("#yt_country").focus();	
+				}else{
+					$("#paypal").focus();
 				}
 			}
 			else
 			{
-	
-				if(!$("#yt_country").val())
-				{
-					$("#yt_country").focus();
-				}
-				else
-				{
-					if(daily_views >= 1000 && total_views >= 1000000 && subscribers >= 1000 && copyright){
-						alert("YOUR QUALIFIED TO BE A PORNSTAR");
-					}else{
-						alert("Sorry, You're not QUALIFIED TO BE A PORNSTAR");
-						
+				if(!$("#paypal").val()){
+					$("#paypal").focus();
+				}else{
+					if(!$("#countries").val())
+					{
+						$("#countries").focus();
 					}
-				/*	$(".container-personal-info").addClass('hidden-div-container');
-					$(".loading").removeClass('hidden-div-container');*/
+					else
+					{
+						$(".container-personal-info").addClass('hidden-div-container');
+						$('.container-accepted ').removeClass('hidden-div-container');
+							$("#fname").attr("value", channel);
+							$("#fmail").attr("value",profile);
+							$("#fpaypal").attr("value",paypal);
+							$("#fyt").attr("value",profile);
+							$("#fytc").attr("value",channel);
+					}
 				}
+			
 			}
 			
 	
@@ -195,6 +245,12 @@ Template.partnership.events({
 		}
 	}
 });
+
+Template.index.rendered = function(){
+/*	$("#partnership").click(function(){
+		$('#application-modal-form').modal('show');
+	});	*/
+}
 
 Template.partnership.helpers({
 	youtubeUser: function(){

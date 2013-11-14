@@ -40,6 +40,7 @@ Template.partnership.events({
 		Meteor.loginWithGoogle({
 			requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/yt-analytics.readonly', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.readonly' , 'https://www.googleapis.com/auth/youtubepartner', 'https://www.googleapis.com/auth/youtubepartner-channel-audit', 'https://www.googleapis.com/auth/plus.me', 'https://www.googleapis.com/auth/userinfo.profile', 'https://www.googleapis.com/auth/userinfo.email','https://www.googleapis.com/auth/plus.login']
 		});
+
 	},
 	'click .logoutButton': function(e,t){
 		Meteor.logout(function(err){
@@ -111,12 +112,40 @@ Template.application_form.helpers({
 
 Template.index.events({
 	'click .YT-button': function(e,t){
+		alert("Bogo");
 		Meteor.loginWithGoogle({
 			requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/yt-analytics.readonly', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.readonly' , 'https://www.googleapis.com/auth/youtubepartner', 'https://www.googleapis.com/auth/youtubepartner-channel-audit', 'https://www.googleapis.com/auth/plus.me','https://www.googleapis.com/auth/plus.login']
+		}, function(err){
+
+				$('#application-modal-form').modal('show');
 		});
 		if (Meteor.user()) {
-
+		
 		};
+	},
+	
+
+
+});
+
+Template.navbarmain.events({
+	'click #partnership-nav': function(e,t){
+		Meteor.loginWithGoogle({
+			requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/yt-analytics.readonly', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.readonly' , 'https://www.googleapis.com/auth/youtubepartner', 'https://www.googleapis.com/auth/youtubepartner-channel-audit', 'https://www.googleapis.com/auth/plus.me','https://www.googleapis.com/auth/plus.login']
+		}, function(status){
+			console.log(status);
+				if(status)
+				{
+					alert("dawd");
+					$('#application-modal-form').modal('show');
+				
+				}else
+				{	
+					alert("Hide");
+					$('#application-modal-form').modal('hide');
+				}
+			
+		});
 	}
 });
 
