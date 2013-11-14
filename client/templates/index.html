@@ -1,97 +1,57 @@
 <template name="index">
-	<div class="container-home col-md-9">
-		<div class="row head-space">
-			<div class="col-xs-12">
-				<a href="#"><img  class="fit-logo" src="arkonlogo.png"></a>
+	<div class="content">
+		<section class="arkon-header">
+			<div class="container">
+				<div class="col-xs-12">
+					<a href="#"><img  class="fit-logo" src="arkonlogo.png"></a>
+				</div>
 			</div>
-			<!-- <div class="col-xs-5 text-space">
-				<span class="head-text"><i>THE NEXT GENERATION <br> OF DIGITAL MEDIA</i></span>
-			</div> -->
-		</div>
-		<div class="content">
-			<div class="col-xs-6 content content-left">
-				<fieldset>
-					<legend><h3>Become a Partner</h3></legend>
+		</section>
+		<section class="arkon-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-6 padding-none-left">
+						<fieldset>
+						<legend><h3>Become a Partner</h3></legend>
 						<div class="col-xs-4">
 							<img src="ark-handshake.jpg">
 						</div>
-					<div class="col-xs-8 align-text">
-						<span>Welcome to ArkonDigital! You're one step away from a badass career in digital entertainment. Login with YouTube account to continue your partnership application.</span>
+						<div class="col-xs-8 align-text">
+							<span>Welcome to ArkonDigital! You're one step away from a badass career in digital entertainment. Login with YouTube account to continue your partnership application.</span>
+						</div>
+					</fieldset>
 					</div>
-				</fieldset>
-			</div>
-			<div class="col-xs-6 content content-right">
-				<fieldset>
-					<legend><h3>Why Sign Up?</h3></legend>
-					<div class="col-xs-4">
-						<img src="sign-up-red.jpg">
+					<div class="col-xs-6 padding-none-right">
+						<fieldset>
+							<legend><h3>Why Sign Up?</h3></legend>
+							<div class="col-xs-4">
+								<img src="sign-up-red.jpg">
+							</div>
+							<div class="col-xs-8">
+								<ul class="left-space">
+									<li>Free to Join</li>
+									<li>Instant Ad Approval</li>
+									<li>No aritificial cap CPM/  Far payout</li>
+									<li>Ownership and Control of your channel</li>
+									<li>24/7 live support chat</li>
+									<li>Expand your reach on new platforms</li>
+								</ul>
+							</div>
+						</fieldset>
 					</div>
-					<div class="col-xs-8">
-						<ul class="left-space">
-							<li>Free to Join</li>
-							<li>Instant Ad Approval</li>
-							<li>No aritificial cap CPM/  Far payout</li>
-							<li>Ownership and Control of your channel</li>
-							<li>24/7 live support chat</li>
-							<li>Expand your reach on new platforms</li>
-						</ul>
-					</div>
-				</fieldset>
-			</div>
-			<!-- <div class="col-xs-4">
-			{{#unless currentUser}}
-				<a href="{{pathFor 'partnership'}}"> 
-					<button class="btn btn-danger btn-xs arkon-button"><b>Apply for partnership</b></button>
-				</a> 
-			{{/unless}}
-		</div> -->
-	</div>
-	<div>
-		<button class="btn btn-danger btn-xs YT-button" id="YTconnect">
-			<img src="YT.png" class="icon-youtube"><b class="YT-button-text">Connect with YouTube</b>
-		</button>
-	</div>
-
-
-		<div class="modal fade" id="application-modal-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		        <h4 class="modal-title" id="myModalLabel">ArkonDigital - Partnership Application Process</h4>
-		      </div>
-		      <div class="modal-body">
-		        <!-- Nav tabs -->
-				<ul class="nav nav-tabs">
-				  <li class="active"><a href="#step_one" data-toggle="tab">Step 1</a></li>
-				  <li><a href="#step_two" data-toggle="tab">Step 2</a></li>
-				  <li><a href="#step_three" data-toggle="tab">Step 3</a></li>
-				  <li><a href="#step_four" data-toggle="tab">Step 4</a></li>
-				</ul>
-
-				<!-- Tab panes -->
-				<div class="tab-content">
-				  <div class="tab-pane active" id="step_one">
-				  	Step 1 Process
-				  </div>
-				  <div class="tab-pane " id="step_two">
-				  	Step 2 Process
-				  </div>
-				  <div class="tab-pane" id="step_three">
-				  	Step 3 Process
-				  </div>
-				  <div class="tab-pane" id="step_four">
-				  	Step 4 Process
-				  </div>
 				</div>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        <button type="button" class="btn btn-primary">Next</button>
-		      </div>
-		    </div><!-- /.modal-content -->
-		  </div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
-
-</div>
+			</div>
+		</section>
+		<section class="arkon-connect-button">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 padding-none">
+						<button class="btn btn-danger btn-xs YT-button" id="YTconnect">
+							<img src="YT.png" class="icon-youtube"><b class="YT-button-text">Connect with YouTube</b>
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
 </template>

@@ -15,11 +15,9 @@ Template.partnership.rendered = function(){
 		}
 	});
 
-
-
 	$("#personal-btn").click(function(){
 
-	$('#application-modal').modal('toggle');
+
 		var daily_views = $("#yt_daily_views2").text();
 		var total_views = $("#yt_total_views2").text();
 		var subscribers = $("#yt_subscribers2").text();
@@ -79,6 +77,8 @@ Template.partnership.rendered = function(){
 
 			if(age < 18)
 			{
+				if($("#yt_country").val())
+				{
 
 				if($("#paypal").val()){
 					if(!$("#countries").val())
@@ -141,7 +141,6 @@ Template.partnership.rendered = function(){
 							$("#fytc").attr("value",channel);
 					}
 				}
-			
 			}
 			
 	

@@ -64,25 +64,15 @@
 	    		</div>
 	   
 		    </div>
-		    <div class="row test">
-	    		<div class="col-xs-4">
-	    			<span>Paypal</span>
-	    		</div>
-	    		<div class="col-xs-7">
-	    			<input name="paypal" id="paypal" placeholder="Paypal Email" class="form-control">
-	    		</div>
-	   
-		    </div>
 	    	<div class="row test">
 			    <div class="col-xs-4">
 	    			<span>Country</span>
 			    </div>							    		
 			    <div class="col-xs-7">
 			     	<!-- <input name="country" id="yt_country" placeholder="Country of Residence" class="form-control"> -->
-			     	<select id="countries"  name="countries" class="form-control">
-			     		<option value="">Select Country</option>
-			     		<option value="AA">Africa</option>
-						<option value="AF">Afghanistan</option>
+			     	<select id="countries" id="yt_country" name="countries" class="form-control">
+						<option value="AF">Africa</option>
+						<option value="A">Afghanistan</option>
 						<option value="AX">Åland Islands</option>
 						<option value="AL">Albania</option>
 						<option value="DZ">Algeria</option>
@@ -399,55 +389,6 @@
 
 		<div class="container-accepted hidden-div-container">
 
-			<div class="row contract-padding">
-				<div class="col-xs-12">
-					<img src="arkon2.png" class="arkon-center">
-				</div>
-					<h2>Content Provider Agreement</h2>
-					<span style="text-align:center;"></span><br>
-					<span>I hereby agree to the terms and conditions stated below and certify that I have the authority to enter into this Agreement.</span><br><br>
-					<span>Signature (if 18 years old or older) or Signature of parent/legal guardian (if under 18 years old):</span><br><br>
-					<b>Full Name:</b><input type="text" id="fname" readonly/><br><br>
-					<b>PayPal:</b><input type="text" id="fpaypal" readonly/><br><br>
-					<b>Youtube Channel:</b><input type="text" id="fytc"readonly/><br><br>
-
-					<hr>
-			</div>
-
-			<object data="/AppAgreement.pdf" type="application/pdf" width="100%" height="100%">
-
-			</object>
-			<div class="row test">
-			   <p>
-			  	<input type="checkbox" value="I Agree" id="agree-check"/>
-			  	<label>I Agree</label>
-			  	<a href="/AppAgreement.pdf">Download ArkonDigital Contract.</a>
-			  </p>
-			</div>
-			<div class="row hidden-div-container btn-ok">
-				<div class="col-xs-6">
-					<button  class="YT-stats-button" id="confirm-btn">Confirm</button>
-				</div>	
-			</div>
 		</div>
-
-		<!-- Modal -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		  <div class="modal-dialog">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-		      </div>
-		      <div class="modal-body">
-		        ...
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		        <button type="button" class="btn btn-primary">Save changes</button>
-		      </div>
-		    </div><!-- /.modal-content -->
-		  </div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
 	</div>
 </template>
