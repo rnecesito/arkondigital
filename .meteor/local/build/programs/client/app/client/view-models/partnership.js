@@ -295,6 +295,7 @@ Template.index.rendered = function(){
 			},3000);
 			$(".yt-stats-container").addClass('hidden-div-container');
 			$(".loading").removeClass('hidden-div-container');
+			
 			$(".step-tab-container").children().eq(0).removeClass("step-tab-active");
 			$(".step-tab-container").children().eq(1).addClass("step-tab-active");	
 		}, 1000);
@@ -325,19 +326,140 @@ Template.index.rendered = function(){
 	
 
 	});
+	
+	$( "#personal-birthdate" ).datepicker({
+      changeMonth: true,
+      changeYear: true
+    });
 
 	$(document).on('click', '.second-step', function(){
 
    
 		var firstname = $("#firstname").attr("value");
-		if(!$("#firstname").val()){
+
+		if(!$("#firstname").val())
+		{
 			$("#firstname").focus();
-		}else{
-			$(".step-tab-container").children().eq(2).removeClass("step-tab-active");
-	    	$(".step-tab-container").children().eq(3).addClass("step-tab-active");
-	    	$("#next-tab-btn").removeClass('second-step');
-			$("#next-tab-btn").addClass('third-step');
 		}
+		else
+		{
+			
+			if(!$("#lastname").val())
+			{
+				$("#lastname").focus();
+			}
+			else
+			{
+				if(!$("#countries").val()){
+					$("#countries").focus();	
+				}
+				else
+				{
+					if(!$("#city").val()){
+						$("#city").focus();
+					}
+					else
+					{
+						if(!$("#province").val()){
+							$("#province").focus();
+						}
+						else
+						{
+							if(!$("#personal-no").val()){
+								$("#personal-no").focus();
+							}
+							else
+							{
+								if(!$("#birth-month").val()){
+									$("#birth-month").focus();
+								}
+								else
+								{
+									if(!$("#birth-day").val())
+									{
+										$("#birth-day").focus();
+									}
+									else
+									{
+										if(!$("#birth-year").val())
+										{
+											$("#birth-year").focus();
+										}
+										else
+										{
+											var month = $("#birth-month").val();
+											var day = $("#birth-day").val();
+											var year = $("#birth-year").val();
+											var bdate = year + '-' + month + '-' + day;
+											var Bdate   = new Date(bdate.split("-").reverse().join('-')),
+    											age     = parseInt( ( (new Date() - Bdate) / 1000 / (60 * 60 * 24) ) / 365.25 ) || 0;
+    										/*	age     = Math.floor( ( (new Date() - Bdate) / 1000 / (60 * 60 * 24) ) / 365.25 );*/
+    										
+    											console.log(age);
+    										if(age < 18)
+    										{
+    											$(".minor").removeClass('hidden-div-container');
+    											if(!$("#parent-firstname").val())
+    											{
+    												$("#parent-firstname").focus();	
+    											}
+    											else
+    											{
+    												if(!$("#parent-lastname").val())
+    												{
+    													$("#parent-firstname").focus();	
+    												}
+    												else
+    												{
+    													if(!$("#parent-email").val())
+    													{
+    														$("#parent-email").focus();
+    													}
+    													else
+    													{
+    														if(!$("#parent-no").val())
+    														{
+    															$("#parent-no").focus()
+    														}
+    														else
+    														{
+    															$(".step-tab-container").children().eq(2).removeClass("step-tab-active");
+														    	$(".step-tab-container").children().eq(3).addClass("step-tab-active");
+														    	$("#next-tab-btn").removeClass('second-step');
+																$("#next-tab-btn").addClass('third-step');
+																$('.container-personal-info').addClass('hidden-div-container');
+																$('.contract-agreement ').removeClass('hidden-div-container');
+
+    														}
+    													}
+    												}
+    											}
+    											
+    										}
+    										else
+    										{
+    											
+    											$(".minor").addClass('hidden-div-container');
+    											$(".step-tab-container").children().eq(2).removeClass("step-tab-active");
+										    	$(".step-tab-container").children().eq(3).addClass("step-tab-active");
+										    	$("#next-tab-btn").removeClass('second-step');
+												$("#next-tab-btn").addClass('third-step');
+												$('.container-personal-info').addClass('hidden-div-container');
+												$('.contract-agreement ').removeClass('hidden-div-container');
+    										}	
+										}
+									}
+									
+								}
+
+							}
+						}	
+					}
+				}
+
+			}
+		}		
+
     	
 	});
 
@@ -350,7 +472,6 @@ Template.index.rendered = function(){
 
 	$(document).on('click', '.third-step', function(){
 
-    	alert("3nd step done");
     	$(".step-tab-container").children().eq(3).removeClass("step-tab-active");
     	$(".step-tab-container").children().eq(0).addClass("step-tab-active");
     	$("#next-tab-btn").removeClass('third-step');

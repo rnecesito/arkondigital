@@ -149,17 +149,53 @@ Template.navbarmain.events({
 				if(Meteor.user()){
 					Meteor.call("checkYT2", Meteor.user().services.google.accessToken, function(error,results){
 						var jsondecoded = json_decode(results.content);
-						console.log(jsondecoded);
-				
-				    	$('#youtube_btn_container').addClass('hidden-div-container');
-				    	$(".container-youtube-stats").removeClass('hidden-div-container');
+							console.log(jsondecoded);
+							
+							
+					/*	console.log(jsondecoded);*/
+						if(results){
+							$(".yt-stats-container").removeClass('hidden-div-container');
+							$(".loading").addClass('hidden-div-container');
+						}
+						/*setTimeout(function(){
+								setTimeout(function(){
+									$('div.progress-bar').width('10%');
+								},2000);
+								setTimeout(function(){
+									$('div.progress-bar').width('20%');
+								},2000);
+								setTimeout(function(){
+									$('div.progress-bar').width('30%');
+								},2000);
+								setTimeout(function(){
+									$('div.progress-bar').width('40%');
+								},1000);
+								setTimeout(function(){
+									$('div.progress-bar').width('50%');
+								},2000);
+								setTimeout(function(){
+									$('div.progress-bar').width('60%');
+								},1000);
+								setTimeout(function(){
+									$('div.progress-bar').width('70%');
+								},2000);
+								setTimeout(function(){
+									$('div.progress-bar').width('80%');
+								},1000);
+								setTimeout(function(){
+									$('div.progress-bar').width('90%');
+								},2000);
+								setTimeout(function(){
+									$('div.progress-bar').width('100%');
+								},3000);
 
+							}, 4000);*/
 
-				    	if(jsondecoded.items[0].auditDetails.overallGoodStanding === true){
-				    		$('.cr-status').val("In Good Standing");
-				    	}else{
-				    		$('.cr-status').val("Not In Good Standing");
-				    	}
+				    		
+						
+				    	
+							
+				    		
 				    	var totalDailyViews = 0;
 
 			    		Meteor.call("checkViews", jsondecoded.items[0].id, function(error2,results2){
@@ -167,46 +203,67 @@ Template.navbarmain.events({
 			    				console.log(error2);
 			    			}
 							// var jsondecoded2 = json_decode(results2.content);
-							console.log(results2.data.rows);
+							/*console.log(results2.data.rows);*/
 							var newData = results2.data.rows;
+							var standing = null;
 							for(var key in newData){
-								console.log(newData[key]);
-								console.log(newData[key][1]);
+								/*console.log(newData[key]);
+								console.log(newData[key][1]);*/
 								totalDailyViews += parseInt(newData[key][1]);
-							/*	for (var key2 in newData[key]) {
-									console.log(key2[1]);
-								};*/
 							}
-							console.log("TOTAL SHIZ: " + parseInt(totalDailyViews/30));
+							/*console.log("TOTAL SHIZ: " + parseInt(totalDailyViews/30));*/
+							if(results2){
+								setTimeout(function(){
+									$(".yt-stats-container").removeClass('hidden-div-container');
+									$(".loading").addClass('hidden-div-container');
+								},2000);
+								$(".first-step").removeAttr('disabled');
+
+							}
+							
 							$('#yt_daily_views2').val(parseInt(totalDailyViews/30));
 							$('#yt_channel_id').val(jsondecoded.items[0].id);
 							$('#yt_channel_name').val(jsondecoded.items[0].snippet.title);
 							$('#yt_channel_name2').val(jsondecoded.items[0].snippet.title);
 					    	$('#yt_channel_daily_views').val(jsondecoded.items[0].statistics.viewCount);
-					    	
 					    	$('#yt_channel_total_views').val(jsondecoded.items[0].statistics.viewCount);
 					    	$('#yt_total_views2').val(jsondecoded.items[0].statistics.viewCount);
 					    	$('#yt_channel_subscribers').val(jsondecoded.items[0].statistics.subscriberCount);
 					    	$('#yt_subscribers2').val(jsondecoded.items[0].statistics.subscriberCount);
-					    	$('#cr_status').val(jsondecoded.items[0].auditDetails.overallGoodStanding);
+					    	
 					    	$("#yt_email").val(Meteor.user().services.google.email);
+					  
+					    	standing = jsondecoded.items[0].auditDetails.overallGoodStanding;
+					    	if(standing){
+			
+					    		$('#cr_status').val("In Good Standing");
+					    		$('#cr-status2').val(jsondecoded.items[0].auditDetails.overallGoodStanding);
+					    	}else{
+
+					    		$('#cr_status').val("Not In Good Standing");
+					    		$('#cr-status2').val(jsondecoded.items[0].auditDetails.overallGoodStanding);
+					    	}
+
 						});
 				    	// console.log(moment().format("YYYY-MM-DD"));
 				    	// console.log(moment().subtract('days',30).format("YYYY-MM-DD"));
 					});
-					Meteor.call("getInfo", Meteor.user().services.google.id, Meteor.user().services.google.accessToken, function(error,results){
+				/*	Meteor.call("getInfo", Meteor.user().services.google.id, Meteor.user().services.google.accessToken, function(error,results){
 						var jsondecoded = json_decode(results.content);
 						console.log(jsondecoded);
-					})
+					})*/
 				}	
 				if(status)
 				{
 					
 					$('#application-modal-form').modal('show');
+					$(".loading").removeClass('hidden-div-container');
+					
+					$(".first-step").attr("disabled", "disabled");
 				
 				}else
 				{	
-					alert("Google Api Call Went Wrong, Try again.");
+					alert("Google Api Call Went Wrong, Please Try again.");
 					$('#application-modal-form').modal('hide');
 				}
 			

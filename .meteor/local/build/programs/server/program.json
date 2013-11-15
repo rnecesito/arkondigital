@@ -188,6 +188,11 @@
       "sourceMapRoot": "packages"
     },
     {
+      "path": "packages/jqueryui.js",
+      "sourceMap": "packages/jqueryui.js.map",
+      "sourceMapRoot": "packages"
+    },
+    {
       "path": "packages/session.js",
       "sourceMap": "packages/session.js.map",
       "sourceMapRoot": "packages"

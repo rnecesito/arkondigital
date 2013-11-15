@@ -4,6 +4,7 @@
     "bootstrap-3": {},
     "datatables": {},
     "paginator": {},
-    "moment": {}
+    "moment": {},
+    "jqueryui": {}
   }
 }

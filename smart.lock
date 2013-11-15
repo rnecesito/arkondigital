@@ -6,7 +6,8 @@
       "bootstrap-3": {},
       "datatables": {},
       "paginator": {},
-      "moment": {}
+      "moment": {},
+      "jqueryui": {}
     },
     "packages": {
       "iron-router": {
@@ -33,6 +34,11 @@
         "git": "https://github.com/acreeger/meteor-moment.git",
         "tag": "v2.2.1",
         "commit": "9ee12e714afe56b189f53076447b7b54f3012065"
+      },
+      "jqueryui": {
+        "git": "https://github.com/mizzao/meteor-jqueryui.git",
+        "tag": "v1.10.3",
+        "commit": "c1c44a17c2e2d92e206dc4ecbaad0b83272de85c"
       }
     }
   }
