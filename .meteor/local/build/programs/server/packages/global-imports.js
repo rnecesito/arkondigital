@@ -4,6 +4,7 @@ Accounts = Package['accounts-base'].Accounts;
 RouteController = Package['iron-router'].RouteController;
 Route = Package['iron-router'].Route;
 Router = Package['iron-router'].Router;
+moment = Package.moment.moment;
 Meteor = Package.meteor.Meteor;
 WebApp = Package.webapp.WebApp;
 main = Package.webapp.main;

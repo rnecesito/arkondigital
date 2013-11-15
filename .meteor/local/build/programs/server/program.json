@@ -183,6 +183,11 @@
       "sourceMapRoot": "packages"
     },
     {
+      "path": "packages/moment.js",
+      "sourceMap": "packages/moment.js.map",
+      "sourceMapRoot": "packages"
+    },
+    {
       "path": "packages/session.js",
       "sourceMap": "packages/session.js.map",
       "sourceMapRoot": "packages"

@@ -38,9 +38,9 @@ Meteor.methods({
 	checkViews: function(channel){
 		this.unblock();
 		var url = "https://www.googleapis.com/youtube/analytics/v1/reports?ids=channel%3D%3D"+channel+"&start-date="+moment().subtract('days',30).format("YYYY-MM-DD")+"&end-date="+moment().format("YYYY-MM-DD")+"&metrics=views&dimensions=day&access_token="+Meteor.user().services.google.accessToken;
-		console.log(url);
-		// var retdata = Meteor.http.call("GET", url);
-		return url;
+		// console.log(url);
+		var retdata = Meteor.http.call("GET", url);
+		return retdata;
 	},
 	getInfo: function (id) {
 		this.unblock();

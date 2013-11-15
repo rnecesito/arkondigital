@@ -706,3 +706,10 @@ body, h1, h2, h3, h4, h5 {
 .yt-stats-container{
 	padding: 10px;
 }
+.container-denied{
+	padding: 10px;
+	margin: 0px auto;
+}
+.container-denied ul{
+	margin-left: 50px;
+}

@@ -150,30 +150,46 @@ Template.navbarmain.events({
 					Meteor.call("checkYT2", Meteor.user().services.google.accessToken, function(error,results){
 						var jsondecoded = json_decode(results.content);
 						console.log(jsondecoded);
-						$('#yt_channel_id').val(jsondecoded.items[0].id);
-						$('#yt_channel_name').val(jsondecoded.items[0].snippet.title);
-						$('#yt_channel_name2').html(jsondecoded.items[0].snippet.title);
-				    	$('#yt_channel_daily_views').val(jsondecoded.items[0].statistics.viewCount);
-				    	$('#yt_daily_views2').html(jsondecoded.items[0].id);
-				    	$('#yt_channel_total_views').val(jsondecoded.items[0].statistics.viewCount);
-				    	$('#yt_total_views2').html(jsondecoded.items[0].statistics.viewCount);
-				    	$('#yt_channel_subscribers').val(jsondecoded.items[0].statistics.subscriberCount);
-				    	$('#yt_subscribers2').html(jsondecoded.items[0].statistics.subscriberCount);
-				    	$('#cr_status').val(jsondecoded.items[0].auditDetails.overallGoodStanding);
+				
 				    	$('#youtube_btn_container').addClass('hidden-div-container');
 				    	$(".container-youtube-stats").removeClass('hidden-div-container');
-				    	// if(jsondecoded.items[0].auditDetails.overallGoodStanding === true){
-				    	// 	$('.cr-status').val("In Good Standing");
-				    	// }else{
-				    	// 	$('.cr-status').val("Not In Good Standing");
-				    	// }
+
+
+				    	if(jsondecoded.items[0].auditDetails.overallGoodStanding === true){
+				    		$('.cr-status').val("In Good Standing");
+				    	}else{
+				    		$('.cr-status').val("Not In Good Standing");
+				    	}
+				    	var totalDailyViews = 0;
 
 			    		Meteor.call("checkViews", jsondecoded.items[0].id, function(error2,results2){
-							var jsondecoded2 = json_decode(results2.content);
-							console.log(jsondecoded2);	
-							for(var key in jsondecoded2.rows){
-								console.log(jsondecoded2.rows[key][1]);
+			    			if(error2){
+			    				console.log(error2);
+			    			}
+							// var jsondecoded2 = json_decode(results2.content);
+							console.log(results2.data.rows);
+							var newData = results2.data.rows;
+							for(var key in newData){
+								console.log(newData[key]);
+								console.log(newData[key][1]);
+								totalDailyViews += parseInt(newData[key][1]);
+							/*	for (var key2 in newData[key]) {
+									console.log(key2[1]);
+								};*/
 							}
+							console.log("TOTAL SHIZ: " + parseInt(totalDailyViews/30));
+							$('#yt_daily_views2').val(parseInt(totalDailyViews/30));
+							$('#yt_channel_id').val(jsondecoded.items[0].id);
+							$('#yt_channel_name').val(jsondecoded.items[0].snippet.title);
+							$('#yt_channel_name2').val(jsondecoded.items[0].snippet.title);
+					    	$('#yt_channel_daily_views').val(jsondecoded.items[0].statistics.viewCount);
+					    	
+					    	$('#yt_channel_total_views').val(jsondecoded.items[0].statistics.viewCount);
+					    	$('#yt_total_views2').val(jsondecoded.items[0].statistics.viewCount);
+					    	$('#yt_channel_subscribers').val(jsondecoded.items[0].statistics.subscriberCount);
+					    	$('#yt_subscribers2').val(jsondecoded.items[0].statistics.subscriberCount);
+					    	$('#cr_status').val(jsondecoded.items[0].auditDetails.overallGoodStanding);
+					    	$("#yt_email").val(Meteor.user().services.google.email);
 						});
 				    	// console.log(moment().format("YYYY-MM-DD"));
 				    	// console.log(moment().subtract('days',30).format("YYYY-MM-DD"));
