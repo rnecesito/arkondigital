@@ -159,9 +159,11 @@ Template.partnership.rendered = function(){
 	});
 
 	if(Meteor.user()){
+		var channel_id;
 		Meteor.call("checkYT2", Meteor.user().services.google.accessToken, function(error,results){
 			var jsondecoded = json_decode(results.content);
 			console.log(jsondecoded);
+			channel_id = jsondecoded.items[0].id;
 			$('#yt_channel_id').val(jsondecoded.items[0].id);
 			$('#yt_channel_name').val(jsondecoded.items[0].snippet.title);
 			$('#yt_channel_name2').html(jsondecoded.items[0].snippet.title);
@@ -183,7 +185,8 @@ Template.partnership.rendered = function(){
 		Meteor.call("getInfo", Meteor.user().services.google.id, Meteor.user().services.google.accessToken, function(error,results){
 			var jsondecoded = json_decode(results.content);
 			console.log(jsondecoded);
-		})
+		});
+		
 	}
 }
 

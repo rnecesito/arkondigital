@@ -4,6 +4,6 @@
     "bootstrap-3": {},
     "datatables": {},
     "paginator": {},
-    "bootstrap-datepicker": {}
+    "moment": {}
   }
 }
