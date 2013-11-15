@@ -254,13 +254,44 @@ Template.index.rendered = function(){
 	});	*/
 
 	$(document).on('click', '.first-step', function(){
-		var daily_views = $("#yt_daily_views2").text();
-		var total_views = $("#yt_total_views2").text();
-		var subscribers = $("#yt_subscribers2").text();
+		var daily_views = $("#yt_daily_views2").attr("value");
+		var total_views = $("#yt_total_views2").attr("value");
+		var subscribers = $("#yt_subscribers2").attr("value");
 		var copyright = $("#cr_status").attr("value");
+		/*setTimeout('wda',1000);*/
 		setTimeout(function(){
-			$(".loading").removeClass('hidden-div-container');
+			setTimeout(function(){
+				$('div.progress-bar').width('10%');
+			},2000);
+			setTimeout(function(){
+				$('div.progress-bar').width('20%');
+			},3000);
+			setTimeout(function(){
+				$('div.progress-bar').width('30%');
+			},3000);
+			setTimeout(function(){
+				$('div.progress-bar').width('40%');
+			},1000);
+			setTimeout(function(){
+				$('div.progress-bar').width('50%');
+			},2000);
+			setTimeout(function(){
+				$('div.progress-bar').width('60%');
+			},1000);
+			setTimeout(function(){
+				$('div.progress-bar').width('70%');
+			},2000);
+			setTimeout(function(){
+				$('div.progress-bar').width('80%');
+			},1000);
+			setTimeout(function(){
+				$('div.progress-bar').width('90%');
+			},2000);
+			setTimeout(function(){
+				$('div.progress-bar').width('100%');
+			},3000);
 			$(".yt-stats-container").addClass('hidden-div-container');
+			$(".loading").removeClass('hidden-div-container');
 			$(".step-tab-container").children().eq(0).removeClass("step-tab-active");
 			$(".step-tab-container").children().eq(1).addClass("step-tab-active");	
 		}, 1000);
@@ -269,8 +300,8 @@ Template.index.rendered = function(){
 
 			if(daily_views >= 100 && total_views >= 100 && subscribers >= 1 && copyright)
 			{
-				alert("kapasar");
 				$(".loading").addClass('hidden-div-container');
+				$(".container-personal-info").removeClass('hidden-div-container');
 				$(".step-tab-container").children().eq(1).removeClass("step-tab-active");	
 				$(".step-tab-container").children().eq(2).addClass("step-tab-active");	
 				$("#next-tab-btn").removeClass('first-step');
@@ -281,17 +312,23 @@ Template.index.rendered = function(){
 					
 			}
 
-		}, 5000);
+		},5000);
 	
 
 	});
 
 	$(document).on('click', '.second-step', function(){
-    	alert("2nd step done");
-    	$(".step-tab-container").children().eq(2).removeClass("step-tab-active");
-    	$(".step-tab-container").children().eq(3).addClass("step-tab-active");
-    	$("#next-tab-btn").removeClass('second-step');
-		$("#next-tab-btn").addClass('third-step');
+
+   
+		var firstname = $("#firstname").attr("value");
+		if(!$("#firstname").val()){
+			$("#firstname").focus();
+		}else{
+			$(".step-tab-container").children().eq(2).removeClass("step-tab-active");
+	    	$(".step-tab-container").children().eq(3).addClass("step-tab-active");
+	    	$("#next-tab-btn").removeClass('second-step');
+			$("#next-tab-btn").addClass('third-step');
+		}
     	
 	});
 
@@ -304,6 +341,29 @@ Template.index.rendered = function(){
 		$("#next-tab-btn").addClass('first-step');
     	$("#application-modal-form").modal('hide');
 	});
+
+
+	/*var startTimeMS = 0;  // EPOCH Time of event count started
+	var timerId;          // Current timer handler
+	var timerStep=5000;   // Time beetwen calls
+
+			// This function starts the timer
+	function startTimer(){
+			   startTimeMS = (new Date()).getTime();
+			   timerId = setTimeout("eventRaised",timerStep);
+			}
+
+	function eventRaised(){
+
+	  alert('WOP EVENT RAISED!');
+
+	  clearTimer(timerId); // clear timer
+	  startTimer(); // do again
+	}
+
+	function getRemainingTime(){
+		return  timerStep - ( (new Date()).getTime() - startTimeMS );
+	}*/
 }
 
 Template.partnership.helpers({

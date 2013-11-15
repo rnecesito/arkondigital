@@ -8,6 +8,7 @@ Accounts.loginServiceConfiguration.insert({
 	// uncomment this config when deploying to live
 /*	clientId: "1062445461634-5mj4e53ttrd3gljja4m4nr7bodsbi86f.apps.googleusercontent.com",
 	secret:"YszzdK4KpSZQO-IYdL32-UTB",*/
+	// uncomment this config when deploying to local
 	clientId: "1062445461634-b2ouqu7lfv9jjsqq87ldddo69jmjv41c.apps.googleusercontent.com",
 	secret:"E1MTt3CORkSdDls2VCGqNbTS",
 

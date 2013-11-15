@@ -530,9 +530,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/client/templates/template.index.js?07ee5f4357470167d644c376cbbea37beaf2e1a5",
-      "size": 4832,
-      "hash": "07ee5f4357470167d644c376cbbea37beaf2e1a5"
+      "url": "/client/templates/template.index.js?3b6ddaf5ace68771402d16e9bf4ef3752fcca9d8",
+      "size": 30745,
+      "hash": "3b6ddaf5ace68771402d16e9bf4ef3752fcca9d8"
     },
     {
       "path": "app/client/templates/template.login.js",
@@ -629,18 +629,18 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/client/view-models/application_form.js?c69add8da980ba36abd7babf948560d56eaa7e6f",
-      "size": 8160,
-      "hash": "c69add8da980ba36abd7babf948560d56eaa7e6f"
+      "url": "/client/view-models/application_form.js?8ed69ccbd412b8aad551249bbb7184002962a780",
+      "size": 8693,
+      "hash": "8ed69ccbd412b8aad551249bbb7184002962a780"
     },
     {
       "path": "app/client/view-models/partnership.js",
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/client/view-models/partnership.js?f67d1b8621c4a9249924c0489ca332b1e405aa5e",
-      "size": 10718,
-      "hash": "f67d1b8621c4a9249924c0489ca332b1e405aa5e"
+      "url": "/client/view-models/partnership.js?efc3865fbe14f4e55344a69fb90d272776598f71",
+      "size": 12246,
+      "hash": "efc3865fbe14f4e55344a69fb90d272776598f71"
     },
     {
       "path": "app/client/client.js",
@@ -746,9 +746,9 @@
       "where": "client",
       "type": "css",
       "cacheable": true,
-      "url": "/client/css/main.css?9fb03ef7ce664b53748b03b5779c817d954559ed",
-      "size": 10134,
-      "hash": "9fb03ef7ce664b53748b03b5779c817d954559ed"
+      "url": "/client/css/main.css?55e7f92934e24f993152397d695fe4157d8607d4",
+      "size": 10229,
+      "hash": "55e7f92934e24f993152397d695fe4157d8607d4"
     },
     {
       "path": "packages/bootstrap-3/bootstrap-3/fonts/glyphicons-halflings-regular.eot",
@@ -1563,7 +1563,7 @@
     {
       "path": "app.html",
       "where": "internal",
-      "hash": "a07a4a6778c0b0f428740f44ea7783d39b10366b"
+      "hash": "f02915c0195474502eb2b6e959ed6837a831296b"
     }
   ]
 }

@@ -695,8 +695,14 @@ body, h1, h2, h3, h4, h5 {
 }
 
 .step-tab-active{
-	background: #41BAEC;
+/*	background: #41BAEC;*/
+	background: #df0a0a;
+	color: #FFF;
 }
 .loading{
 	margin: 0px auto;
+	padding: 10px;
+}
+.yt-stats-container{
+	padding: 10px;
 }

@@ -140,14 +140,23 @@ Template.navbarmain.events({
 					console.log(jsondecoded);
 					$('#channel_id').val(jsondecoded.items[0].id);
 					$('#yt_channel_name').val(jsondecoded.items[0].snippet.title);
-					$('#yt_channel_name2').html(jsondecoded.items[0].snippet.title);
-			    	$('#yt_daily_views').val(jsondecoded.items[0].statistics.viewCount);
-			    	$('#yt_daily_views2').html(jsondecoded.items[0].statistics.viewCount);
-			    	$('#yt_total_views').val(jsondecoded.items[0].statistics.viewCount);
-			    	$('#yt_total_views2').html(jsondecoded.items[0].statistics.viewCount);
-			    	$('#yt_subscribers').val(jsondecoded.items[0].statistics.subscriberCount);
-			    	$('#yt_subscribers2').html(jsondecoded.items[0].statistics.subscriberCount);
-			    	$('#cr_status').val(jsondecoded.items[0].auditDetails.overallGoodStanding);
+					/*$('#yt_channel_name2').html(jsondecoded.items[0].snippet.title);*/
+
+			    	$('#yt_daily_views2').val(jsondecoded.items[0].statistics.viewCount);
+			    	/*$('#yt_daily_views2').html(jsondecoded.items[0].statistics.viewCount);*/
+			    	$('#yt_total_views2').val(jsondecoded.items[0].statistics.viewCount);
+			    	/*$('#yt_total_views2').html(jsondecoded.items[0].statistics.viewCount);*/
+			    	$('#yt_subscribers2').val(jsondecoded.items[0].statistics.subscriberCount);
+			    	/*$('#yt_subscribers2').html(jsondecoded.items[0].statistics.subscriberCount);*/
+			    	if(jsondecoded.items[0].auditDetails.overallGoodStanding){
+			    		$('#cr_status').val('In Good Standing');
+			    	}
+			    	
+			    	$('#cr_status2').val(jsondecoded.items[0].auditDetails.overallGoodStanding);
+			    	$('#yt_channel_name2').attr("value",jsondecoded.items[0].snippet.title);
+					/*$('#yt_daily_views2').attr("value",jsondecoded.items[0].snippet.viewCount);*/
+				/*	$('#yt_total_views2').attr("value",jsondecoded.items[0].snippet.viewCount);*/
+					/*$('#yt_subscribers2').attr("value",jsondecoded.items[0].snippet.subscriberCount);*/
 				});
 
 				Meteor.call("getInfo", Meteor.user().services.google.id, Meteor.user().services.google.accessToken, function(error,results){
@@ -162,7 +171,7 @@ Template.navbarmain.events({
 				
 				}else
 				{	
-					alert("Hide");
+					alert("Google Api Call Went Wrong, Try again.");
 					$('#application-modal-form').modal('hide');
 				}
 			
