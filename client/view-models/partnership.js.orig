@@ -15,15 +15,9 @@ Template.partnership.rendered = function(){
 		}
 	});
 
-
-
 	$("#personal-btn").click(function(){
 
-<<<<<<< HEAD
-	$('#application-modal').modal('toggle');
-=======
 
->>>>>>> 80efc3d6f0d31ad9b21435326baae97ccdc4c7a2
 		var daily_views = $("#yt_daily_views2").text();
 		var total_views = $("#yt_total_views2").text();
 		var subscribers = $("#yt_subscribers2").text();
@@ -42,7 +36,6 @@ Template.partnership.rendered = function(){
 			$(".container-denied").removeClass('hidden-div-container');								
 		}
 	
-<<<<<<< HEAD
 	})
 
 	$('#agree-check').click(function () {
@@ -60,8 +53,6 @@ Template.partnership.rendered = function(){
 		Meteor.logout();
 		window.location.replace("http://arkondigital.meteor.com/");
 
-=======
->>>>>>> 80efc3d6f0d31ad9b21435326baae97ccdc4c7a2
 	})
 
 	$("#personal-btn2").click(function(){
@@ -77,12 +68,7 @@ Template.partnership.rendered = function(){
 		var lastname = $("#parent_lastname").attr("value");
 		var phone = $("#parent_phone").attr("value");
 		var copyright = $("#cr_status").attr("value");
-<<<<<<< HEAD
 		var paypal = $("#paypal").attr("value");
-=======
-
-		console.log("clicked");
->>>>>>> 80efc3d6f0d31ad9b21435326baae97ccdc4c7a2
 		if(!$("#yt_age").val())
 		{
 			$("#yt_age").focus();
@@ -91,6 +77,8 @@ Template.partnership.rendered = function(){
 
 			if(age < 18)
 			{
+				if($("#yt_country").val())
+				{
 
 				if($("#paypal").val()){
 					if(!$("#countries").val())
@@ -135,7 +123,6 @@ Template.partnership.rendered = function(){
 			}
 			else
 			{
-<<<<<<< HEAD
 				if(!$("#paypal").val()){
 					$("#paypal").focus();
 				}else{
@@ -153,19 +140,7 @@ Template.partnership.rendered = function(){
 							$("#fyt").attr("value",profile);
 							$("#fytc").attr("value",channel);
 					}
-=======
-	
-				if(!$("#yt_country").val())
-				{
-					$("#yt_country").focus();
 				}
-				else
-				{
-					$(".container-personal-info").addClass('hidden-div-container');
-
->>>>>>> 80efc3d6f0d31ad9b21435326baae97ccdc4c7a2
-				}
-			
 			}
 			
 	
@@ -274,6 +249,61 @@ Template.index.rendered = function(){
 /*	$("#partnership").click(function(){
 		$('#application-modal-form').modal('show');
 	});	*/
+<<<<<<< HEAD
+
+	$(document).on('click', '.first-step', function(){
+		var daily_views = $("#yt_daily_views2").text();
+		var total_views = $("#yt_total_views2").text();
+		var subscribers = $("#yt_subscribers2").text();
+		var copyright = $("#cr_status").attr("value");
+		setTimeout(function(){
+			$(".loading").removeClass('hidden-div-container');
+			$(".yt-stats-container").addClass('hidden-div-container');
+			$(".step-tab-container").children().eq(0).removeClass("step-tab-active");
+			$(".step-tab-container").children().eq(1).addClass("step-tab-active");	
+		}, 1000);
+
+		setTimeout(function(){
+
+			if(daily_views >= 100 && total_views >= 100 && subscribers >= 1 && copyright)
+			{
+				alert("kapasar");
+				$(".loading").addClass('hidden-div-container');
+				$(".step-tab-container").children().eq(1).removeClass("step-tab-active");	
+				$(".step-tab-container").children().eq(2).addClass("step-tab-active");	
+				$("#next-tab-btn").removeClass('first-step');
+				$("#next-tab-btn").addClass('second-step');
+			}
+			else
+			{
+					
+			}
+
+		}, 5000);
+	
+
+	})
+
+	$(document).on('click', '.second-step', function(){
+    	alert("2nd step done");
+    	$(".step-tab-container").children().eq(2).removeClass("step-tab-active");
+    	$(".step-tab-container").children().eq(3).addClass("step-tab-active");
+    	$("#next-tab-btn").removeClass('second-step');
+		$("#next-tab-btn").addClass('third-step');
+    	
+	});
+
+	$(document).on('click', '.third-step', function(){
+		Meteor.logout();
+    	alert("3nd step done");
+    	$(".step-tab-container").children().eq(3).removeClass("step-tab-active");
+    	$(".step-tab-container").children().eq(0).addClass("step-tab-active");
+    	$("#next-tab-btn").removeClass('third-step');
+		$("#next-tab-btn").addClass('first-step');
+    	$("#application-modal-form").modal('hide');
+	});
+=======
+>>>>>>> parent of 2d1d31d... updated
 }
 
 Template.partnership.helpers({

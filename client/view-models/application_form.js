@@ -114,12 +114,12 @@ Template.application_form.helpers({
 
 Template.index.events({
 	'click .YT-button': function(e,t){
-		alert("Bogo");
+
 		Meteor.loginWithGoogle({
 			requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/yt-analytics.readonly', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.readonly' , 'https://www.googleapis.com/auth/youtubepartner', 'https://www.googleapis.com/auth/youtubepartner-channel-audit', 'https://www.googleapis.com/auth/plus.me','https://www.googleapis.com/auth/plus.login']
 		}, function(err){
 
-			
+				$('#application-modal-form').modal('show');
 		});
 		if (Meteor.user()) {
 		
@@ -140,17 +140,16 @@ Template.index.rendered = function(){
 }
 
 Template.navbarmain.events({
-	'click #partnership-nav': function(e,t){		
+	'click #partnership-nav': function(e,t){
 		Meteor.loginWithGoogle({
 			requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/yt-analytics.readonly', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.readonly' , 'https://www.googleapis.com/auth/youtubepartner', 'https://www.googleapis.com/auth/youtubepartner-channel-audit', 'https://www.googleapis.com/auth/plus.me','https://www.googleapis.com/auth/plus.login'],
 			responseType: "token"
 		}, function(status){
-			console.log(status);
+
 				if(Meteor.user()){
 					Meteor.call("checkYT2", Meteor.user().services.google.accessToken, function(error,results){
 						var jsondecoded = json_decode(results.content);
 						console.log(jsondecoded);
-						console.log(jsondecoded.items[0].id);
 						$('#yt_channel_id').val(jsondecoded.items[0].id);
 						$('#yt_channel_name').val(jsondecoded.items[0].snippet.title);
 						$('#yt_channel_name2').html(jsondecoded.items[0].snippet.title);
@@ -179,14 +178,17 @@ Template.navbarmain.events({
 				    	// console.log(moment().format("YYYY-MM-DD"));
 				    	// console.log(moment().subtract('days',30).format("YYYY-MM-DD"));
 					});
+					Meteor.call("getInfo", Meteor.user().services.google.id, Meteor.user().services.google.accessToken, function(error,results){
+						var jsondecoded = json_decode(results.content);
+						console.log(jsondecoded);
+					})
 				}	
 				if(status)
 				{
-					alert("dawd");
+					
 					$('#application-modal-form').modal('show');
 				
-				}
-				else
+				}else
 				{	
 					alert("Hide");
 					$('#application-modal-form').modal('hide');

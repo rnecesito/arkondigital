@@ -11,6 +11,7 @@
 		Meteor.call("checkYT2", Meteor.user().services.google.accessToken, function(error,results){
 			var jsondecoded = json_decode(results.content);
 			console.log(jsondecoded);
+			var channel_id = jsondecoded.items[0].id;
 			$('#channel_id').val(jsondecoded.items[0].id);
 			$('#yt_channel_name').val(jsondecoded.items[0].snippet.title);
 			$('#yt_channel_name2').html(jsondecoded.items[0].snippet.title);
@@ -31,6 +32,7 @@
 			var jsondecoded = json_decode(results.content);
 			console.log(jsondecoded);
 		})
+		console.log(channel_id);
 	}
 }
 
@@ -112,12 +114,12 @@ Template.application_form.helpers({
 
 Template.index.events({
 	'click .YT-button': function(e,t){
-		alert("Bogo");
+
 		Meteor.loginWithGoogle({
 			requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/yt-analytics.readonly', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.readonly' , 'https://www.googleapis.com/auth/youtubepartner', 'https://www.googleapis.com/auth/youtubepartner-channel-audit', 'https://www.googleapis.com/auth/plus.me','https://www.googleapis.com/auth/plus.login']
 		}, function(err){
 
-			
+				$('#application-modal-form').modal('show');
 		});
 		if (Meteor.user()) {
 		
@@ -140,9 +142,9 @@ Template.index.rendered = function(){
 Template.navbarmain.events({
 	'click #partnership-nav': function(e,t){
 		Meteor.loginWithGoogle({
-			requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/yt-analytics.readonly', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.readonly' , 'https://www.googleapis.com/auth/youtubepartner', 'https://www.googleapis.com/auth/youtubepartner-channel-audit', 'https://www.googleapis.com/auth/plus.me','https://www.googleapis.com/auth/plus.login']
+			requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/yt-analytics.readonly', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.readonly' , 'https://www.googleapis.com/auth/youtubepartner', 'https://www.googleapis.com/auth/youtubepartner-channel-audit', 'https://www.googleapis.com/auth/plus.me','https://www.googleapis.com/auth/plus.login'],
+			responseType: "token"
 		}, function(status){
-			console.log(status);
 
 				if(Meteor.user()){
 					Meteor.call("checkYT2", Meteor.user().services.google.accessToken, function(error,results){
@@ -152,7 +154,7 @@ Template.navbarmain.events({
 						$('#yt_channel_name').val(jsondecoded.items[0].snippet.title);
 						$('#yt_channel_name2').html(jsondecoded.items[0].snippet.title);
 				    	$('#yt_channel_daily_views').val(jsondecoded.items[0].statistics.viewCount);
-				    	$('#yt_daily_views2').html(jsondecoded.items[0].statistics.viewCount);
+				    	$('#yt_daily_views2').html(jsondecoded.items[0].id);
 				    	$('#yt_channel_total_views').val(jsondecoded.items[0].statistics.viewCount);
 				    	$('#yt_total_views2').html(jsondecoded.items[0].statistics.viewCount);
 				    	$('#yt_channel_subscribers').val(jsondecoded.items[0].statistics.subscriberCount);
@@ -165,6 +167,16 @@ Template.navbarmain.events({
 				    	// }else{
 				    	// 	$('.cr-status').val("Not In Good Standing");
 				    	// }
+
+			    		Meteor.call("checkViews", jsondecoded.items[0].id, function(error2,results2){
+							var jsondecoded2 = json_decode(results2.content);
+							console.log(jsondecoded2);	
+							for(var key in jsondecoded2.rows){
+								console.log(jsondecoded2.rows[key][1]);
+							}
+						});
+				    	// console.log(moment().format("YYYY-MM-DD"));
+				    	// console.log(moment().subtract('days',30).format("YYYY-MM-DD"));
 					});
 					Meteor.call("getInfo", Meteor.user().services.google.id, Meteor.user().services.google.accessToken, function(error,results){
 						var jsondecoded = json_decode(results.content);
@@ -173,11 +185,10 @@ Template.navbarmain.events({
 				}	
 				if(status)
 				{
-					alert("dawd");
+					
 					$('#application-modal-form').modal('show');
 				
-				}
-				else
+				}else
 				{	
 					alert("Hide");
 					$('#application-modal-form').modal('hide');

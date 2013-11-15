@@ -36,7 +36,7 @@
 			$(".container-denied").removeClass('hidden-div-container');								
 		}
 	
-	});
+	})
 
 	$('#agree-check').click(function () {
    	 var x = $(this).attr("checked");
@@ -159,9 +159,11 @@
 	});
 
 	if(Meteor.user()){
+		var channel_id;
 		Meteor.call("checkYT2", Meteor.user().services.google.accessToken, function(error,results){
 			var jsondecoded = json_decode(results.content);
 			console.log(jsondecoded);
+			channel_id = jsondecoded.items[0].id;
 			$('#yt_channel_id').val(jsondecoded.items[0].id);
 			$('#yt_channel_name').val(jsondecoded.items[0].snippet.title);
 			$('#yt_channel_name2').html(jsondecoded.items[0].snippet.title);
@@ -183,7 +185,8 @@
 		Meteor.call("getInfo", Meteor.user().services.google.id, Meteor.user().services.google.accessToken, function(error,results){
 			var jsondecoded = json_decode(results.content);
 			console.log(jsondecoded);
-		})
+		});
+		
 	}
 }
 
@@ -252,54 +255,58 @@ Template.index.rendered = function(){
 /*	$("#partnership").click(function(){
 		$('#application-modal-form').modal('show');
 	});	*/
-	$("#next-tab-btn").click(function(){
+
+	$(document).on('click', '.first-step', function(){
 		var daily_views = $("#yt_daily_views2").text();
 		var total_views = $("#yt_total_views2").text();
 		var subscribers = $("#yt_subscribers2").text();
 		var copyright = $("#cr_status").attr("value");
-		alert(copyright);
-		alert(daily_views);
-		alert(total_views);
-		alert(subscribers);
+		setTimeout(function(){
+			$(".loading").removeClass('hidden-div-container');
+			$(".yt-stats-container").addClass('hidden-div-container');
+			$(".step-tab-container").children().eq(0).removeClass("step-tab-active");
+			$(".step-tab-container").children().eq(1).addClass("step-tab-active");	
+		}, 1000);
 
 		setTimeout(function(){
+
 			if(daily_views >= 100 && total_views >= 100 && subscribers >= 1 && copyright)
 			{
 				alert("kapasar");
-				/*$(".container-youtube-stats").addClass('hidden-div-container');
-				$(".container-personal-info").removeClass('hidden-div-container');	*/
-				$(".loading").removeClass('hidden-div-container');
-				$(".yt-stats-container").addClass('hidden-div-container');
-				$(".step-tab-container").children().eq(0).removeClass("step-tab-active");
-				$(".step-tab-container").children().eq(1).addClass("step-tab-active");		
+				$(".loading").addClass('hidden-div-container');
+				$(".step-tab-container").children().eq(1).removeClass("step-tab-active");	
+				$(".step-tab-container").children().eq(2).addClass("step-tab-active");	
+				$("#next-tab-btn").removeClass('first-step');
+				$("#next-tab-btn").addClass('second-step');
 			}
 			else
 			{
-				setTimeout(function(){
-				$(".step-tab-container").children().eq(2).addClass("step-tab-active");
-				}, 10000);
-				setTimeout(function(){
-					$(".step-tab-container").children().eq(3).addClass("step-tab-active");
-				}, 10000);							
+					
 			}
 
-		}, 20000)
+		}, 5000);
 	
-		/*$("div.step-tab-container :last-child").addClass("step-tab-active");*/
-		
-	/*	setTimeout(function(){
-			$(".step-tab-container").children().eq(1).addClass("step-tab-active");
-		}, 10000);
-		setTimeout(function(){
-			$(".step-tab-container").children().eq(2).addClass("step-tab-active");
-		}, 10000);
-		setTimeout(function(){
-			$(".step-tab-container").children().eq(3).addClass("step-tab-active");
-		}, 10000);*/
 
-	/*	$("div.step-tab-container").children("div:nth-child(1)").children("div.step-tab").addClass("step-tab-active");*/
+	});
 
-	})
+	$(document).on('click', '.second-step', function(){
+    	alert("2nd step done");
+    	$(".step-tab-container").children().eq(2).removeClass("step-tab-active");
+    	$(".step-tab-container").children().eq(3).addClass("step-tab-active");
+    	$("#next-tab-btn").removeClass('second-step');
+		$("#next-tab-btn").addClass('third-step');
+    	
+	});
+
+	$(document).on('click', '.third-step', function(){
+
+    	alert("3nd step done");
+    	$(".step-tab-container").children().eq(3).removeClass("step-tab-active");
+    	$(".step-tab-container").children().eq(0).addClass("step-tab-active");
+    	$("#next-tab-btn").removeClass('third-step');
+		$("#next-tab-btn").addClass('first-step');
+    	$("#application-modal-form").modal('hide');
+	});
 }
 
 Template.partnership.helpers({
