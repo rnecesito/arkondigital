@@ -189,8 +189,8 @@ Template.navbarmain.events({
 									$('div.progress-bar').width('100%');
 								},3000);
 
-							}, 4000);*/
-
+							}, 2000);
+*/
 				    		
 						
 				    	

@@ -274,19 +274,19 @@ Template.index.rendered = function(){
 			},3000);
 			setTimeout(function(){
 				$('div.progress-bar').width('40%');
-			},1000);
+			},4000);
 			setTimeout(function(){
 				$('div.progress-bar').width('50%');
 			},2000);
 			setTimeout(function(){
 				$('div.progress-bar').width('60%');
-			},1000);
+			},3000);
 			setTimeout(function(){
 				$('div.progress-bar').width('70%');
 			},2000);
 			setTimeout(function(){
 				$('div.progress-bar').width('80%');
-			},1000);
+			},3000);
 			setTimeout(function(){
 				$('div.progress-bar').width('90%');
 			},2000);
@@ -387,12 +387,12 @@ Template.index.rendered = function(){
 										}
 										else
 										{
-											var month = $("#birth-month").val();
-											var day = $("#birth-day").val();
-											var year = $("#birth-year").val();
+											var month = parseInt($("#birth-month").val());
+											var day = parseInt($("#birth-day").val());
+											var year = parseInt($("#birth-year").val());
 											var bdate = year + '-' + month + '-' + day;
-											var Bdate   = new Date(bdate.split("-").reverse().join('-')),
-    											age     = parseInt( ( (new Date() - Bdate) / 1000 / (60 * 60 * 24) ) / 365.25 ) || 0;
+											var Bdate   = new Date(bdate.split("-").reverse().join('-'));
+    										var	age     = parseInt( ( (new Date() - Bdate) / 1000 / (60 * 60 * 24) ) / 365.25 ) || 0;
     										/*	age     = Math.floor( ( (new Date() - Bdate) / 1000 / (60 * 60 * 24) ) / 365.25 );*/
     										
     											console.log(age);
@@ -446,6 +446,10 @@ Template.index.rendered = function(){
 												$("#next-tab-btn").addClass('third-step');
 												$('.container-personal-info').addClass('hidden-div-container');
 												$('.contract-agreement ').removeClass('hidden-div-container');
+												$("#fullname").attr("value", $("#firstname").val() + ' ' + $("#lastname").val());
+												$("#yt_email2").attr("value", Meteor.user().services.google.email);
+												$("#email").attr("value", Meteor.user().services.google.email);
+												$("#yt_channel_name3").attr("value", $("#yt_channel_name2").val());
     										}	
 										}
 									}
@@ -477,30 +481,35 @@ Template.index.rendered = function(){
     	$("#next-tab-btn").removeClass('third-step');
 		$("#next-tab-btn").addClass('first-step');
     	$("#application-modal-form").modal('hide');
+    	Meteor.logout();
 	});
 
 
-	/*var startTimeMS = 0;  // EPOCH Time of event count started
-	var timerId;          // Current timer handler
-	var timerStep=5000;   // Time beetwen calls
+	$('div#page2, div#page3, div#page4, div#page5, div#page6, div#page7').hide();
+	$(document).on('click', '#next-contract-page', function(){
+		var curr = $("div.page:visible");
+        var next = curr.next("div.page");
+        next.show();
+        curr.hide();
+        if (!next.next(".page").length) {
+            $('#next-contract-page').attr('disabled', 'disabled');
+            $('#prev-contract-page').removeAttr('disabled');
+        }
+    	
+	});
 
-			// This function starts the timer
-	function startTimer(){
-			   startTimeMS = (new Date()).getTime();
-			   timerId = setTimeout("eventRaised",timerStep);
-			}
 
-	function eventRaised(){
-
-	  alert('WOP EVENT RAISED!');
-
-	  clearTimer(timerId); // clear timer
-	  startTimer(); // do again
-	}
-
-	function getRemainingTime(){
-		return  timerStep - ( (new Date()).getTime() - startTimeMS );
-	}*/
+	$(document).on('click', '#prev-contract-page', function(){
+		var curr1 = $("div.page:visible");
+        var prev = curr1.prev("div.page");
+        prev.show();
+        curr1.hide();
+        if (!prev.prev(".page").length) {
+            $('#prev-contract-page').attr('disabled', 'disabled');
+             $('#next-contract-page').removeAttr('disabled');
+        }
+    	
+	});
 }
 
 Template.partnership.helpers({

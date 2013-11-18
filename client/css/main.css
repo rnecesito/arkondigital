@@ -713,3 +713,39 @@ body, h1, h2, h3, h4, h5 {
 .container-denied ul{
 	margin-left: 50px;
 }
+
+.contract-agreement .contract-inner-container img {
+	width: 100%;
+}
+
+.contract-inner-container {
+	width: 80%;
+	border: solid 1px #CCC;
+	-webkit-box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.25);
+	-moz-box-shadow:    4px 4px 5px rgba(50, 50, 50, 0.25);
+	box-shadow:         4px 4px 5px rgba(50, 50, 50, 0.25);
+	padding: 15px;
+	border-radius: 3px;	
+	margin: 0 auto;
+}
+
+.contract-page-control {
+	width: 80%;
+	margin: 15px auto;
+}
+
+.contract-center {
+	text-align: center;
+}
+
+.margin-next-btn {
+	margin-left: 64.3%;
+}
+
+.dark-gray {
+	color: #000000;
+}
+
+.contract-footer {
+	font-size: 12px;
+}
