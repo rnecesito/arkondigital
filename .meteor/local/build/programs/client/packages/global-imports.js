@@ -6,6 +6,7 @@ Route = Package['iron-router'].Route;
 Router = Package['iron-router'].Router;
 IronLocation = Package['iron-router'].IronLocation;
 moment = Package.moment.moment;
+Sendgrid = Package.sendgrid.Sendgrid;
 Meteor = Package.meteor.Meteor;
 Log = Package.logging.Log;
 Deps = Package.deps.Deps;

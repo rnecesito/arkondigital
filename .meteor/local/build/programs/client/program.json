@@ -454,6 +454,28 @@
       "hash": "79a65fd6691cb39f1e1dcf2c0427fcf3df541b9d"
     },
     {
+      "path": "packages/sendgrid.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/sendgrid.js?be7c54956d4304040308cc735a2c185a112c1df2",
+      "sourceMap": "packages/sendgrid.js.map",
+      "sourceMapUrl": "/packages/be7c54956d4304040308cc735a2c185a112c1df2.map",
+      "size": 1424,
+      "hash": "d43b4eb5eabaea5385db8027d1b766a695dd09fd"
+    },
+    {
+      "path": "packages/jspdf.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/jspdf.js?4d5121d6860a6d1c8f3a72161b3dbafe82f1ab03",
+      "sourceMap": "packages/jspdf.js.map",
+      "sourceMapUrl": "/packages/4d5121d6860a6d1c8f3a72161b3dbafe82f1ab03.map",
+      "size": 77633,
+      "hash": "0574f0865c9accc712156176a64d1f564415aa58"
+    },
+    {
       "path": "packages/webapp.js",
       "where": "client",
       "type": "js",
@@ -480,9 +502,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/packages/global-imports.js?12fee7e560d7d2f1fc41bdcf575356dfc227f7bc",
-      "size": 759,
-      "hash": "12fee7e560d7d2f1fc41bdcf575356dfc227f7bc"
+      "url": "/packages/global-imports.js?8001dfd126783928dbb5e9048e35344c0eab6535",
+      "size": 797,
+      "hash": "8001dfd126783928dbb5e9048e35344c0eab6535"
     },
     {
       "path": "app/client/templates/template.about.js",
@@ -530,15 +552,6 @@
       "hash": "8b3ea3a14764da2354c70e4b6b4618178e3e6bd4"
     },
     {
-      "path": "app/client/templates/template.dashboard.js",
-      "where": "client",
-      "type": "js",
-      "cacheable": true,
-      "url": "/client/templates/template.dashboard.js?f24305899e9d9eb142f812ad38710889dbd187d3",
-      "size": 5410,
-      "hash": "f24305899e9d9eb142f812ad38710889dbd187d3"
-    },
-    {
       "path": "app/client/templates/template.faqs.js",
       "where": "client",
       "type": "js",
@@ -552,9 +565,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/client/templates/template.index.js?65584da42bc8e317ae99d03ee62316e9349a9090",
-      "size": 53402,
-      "hash": "65584da42bc8e317ae99d03ee62316e9349a9090"
+      "url": "/client/templates/template.index.js?13f41ce9798e33d72f40f206295364551d70bb49",
+      "size": 53446,
+      "hash": "13f41ce9798e33d72f40f206295364551d70bb49"
     },
     {
       "path": "app/client/templates/template.login.js",
@@ -570,9 +583,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/client/templates/template.navbar.js?581dab57dff49a92a42466663e82d6df27242f49",
-      "size": 1634,
-      "hash": "581dab57dff49a92a42466663e82d6df27242f49"
+      "url": "/client/templates/template.navbar.js?f8d8f6cf58d0ab29794a5022c168c20091be3041",
+      "size": 1811,
+      "hash": "f8d8f6cf58d0ab29794a5022c168c20091be3041"
     },
     {
       "path": "app/client/templates/template.oauth.js",
@@ -651,18 +664,18 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/client/view-models/application_form.js?a69f08f75fc4e39677d74ca5ab08663b0a4e9c40",
-      "size": 11210,
-      "hash": "a69f08f75fc4e39677d74ca5ab08663b0a4e9c40"
+      "url": "/client/view-models/application_form.js?4900b71fe7095ae82d6d20028e9bd6f672905572",
+      "size": 10219,
+      "hash": "4900b71fe7095ae82d6d20028e9bd6f672905572"
     },
     {
       "path": "app/client/view-models/partnership.js",
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/client/view-models/partnership.js?86a10476acc2734971ca798e96768c4d1fe7dfd2",
-      "size": 16549,
-      "hash": "86a10476acc2734971ca798e96768c4d1fe7dfd2"
+      "url": "/client/view-models/partnership.js?3c489ca0aed22869bb0f93d1af9e56d628bceed0",
+      "size": 17950,
+      "hash": "3c489ca0aed22869bb0f93d1af9e56d628bceed0"
     },
     {
       "path": "app/client/client.js",
@@ -1585,7 +1598,7 @@
     {
       "path": "app.html",
       "where": "internal",
-      "hash": "b9cfd6d44898ae253366fe16609f46785c805a8d"
+      "hash": "46e653d2843f18fe84bff41b8c10b2a8d1f82f5f"
     }
   ]
 }

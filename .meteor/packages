@@ -16,3 +16,5 @@ datatables
 paginator
 moment
 jqueryui
+sendgrid
+jspdf

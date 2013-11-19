@@ -252,10 +252,64 @@ Template.partnership.events({
 });
 
 Template.index.rendered = function(){
-/*	$("#partnership").click(function(){
-		$('#application-modal-form').modal('show');
-	});	*/
+		 
+/*
+		 Meteor.Sendgrid.send({
+		    to: 'cabornay.lito@gmail.com',
+		    from: 'no-reply@where-ever.com',
+		    subject: 'I really like sending emails with Sendgrid!',
+		    text: 'Sendgrid is totally awesome for sending emails!'
+  		});*/
 
+		var name = prompt('What is your name?');
+		var multiplier = prompt('Enter a number:');
+		multiplier = parseInt(multiplier);
+
+		var doc = new jsPDF();
+		doc.setFontSize(22);	
+		doc.text(20, 20, 'Questions');
+		doc.setFontSize(16);
+		doc.text(20, 30, 'This belongs to: ' + name);
+
+		for(var i = 1; i <= 12; i ++) {
+			doc.text(20, 30 + (i * 10), i + ' x ' + multiplier + ' = ___');
+		}
+
+		doc.addPage();
+		doc.setFontSize(22);
+		doc.text(20, 20, 'Answers');
+		doc.setFontSize(16);
+
+		for(var i = 1; i <= 12; i ++) {
+			doc.text(20, 30 + (i * 10), i + ' x ' + multiplier + ' = ' + (i * multiplier));
+		}	
+		doc.output('datauri');var name = prompt('What is your name?');
+		var multiplier = prompt('Enter a number:');
+		multiplier = parseInt(multiplier);
+
+		var doc = new jsPDF();
+		doc.setFontSize(22);	
+		doc.text(20, 20, 'Questions');
+		doc.setFontSize(16);
+		doc.text(20, 30, 'This belongs to: ' + name);
+
+		for(var i = 1; i <= 12; i ++) {
+			doc.text(20, 30 + (i * 10), i + ' x ' + multiplier + ' = ___');
+		}
+
+		doc.addPage();
+		doc.setFontSize(22);
+		doc.text(20, 20, 'Answers');
+		doc.setFontSize(16);
+
+		for(var i = 1; i <= 12; i ++) {
+			doc.text(20, 30 + (i * 10), i + ' x ' + multiplier + ' = ' + (i * multiplier));
+		}	
+		doc.output('datauri');
+
+
+
+					
 	$(document).on('click', '.first-step', function(){
 		var daily_views = $("#yt_daily_views2").attr("value");
 		var total_views = $("#yt_total_views2").attr("value");
@@ -465,7 +519,10 @@ Template.index.rendered = function(){
 		}		
 
     	
-	});
+		
+	
+
+	})
 
 
 	$(document).on('click', '#tb-scam', function(){
@@ -485,7 +542,7 @@ Template.index.rendered = function(){
 	});
 
 
-	$('div#page2, div#page3, div#page4, div#page5, div#page6, div#page7').hide();
+	$('#page2, #page3, #page4, #page5, #page6, #page7').hide();
 	$(document).on('click', '#next-contract-page', function(){
 		var curr = $("div.page:visible");
         var next = curr.next("div.page");

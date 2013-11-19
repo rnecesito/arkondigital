@@ -88,4 +88,5 @@ Meteor.startup(function(){
 	application_status.insert({cs: "Disabled by YouTube", ns: "Denied", color: "grey"});
 	application_status.insert({cs: "Removed", color: "grey"});
 	application_status.insert({cs: "Blacklisted", color: "grey"});
+
 })

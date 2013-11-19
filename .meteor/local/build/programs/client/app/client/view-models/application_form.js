@@ -157,41 +157,6 @@ Template.navbarmain.events({
 							$(".yt-stats-container").removeClass('hidden-div-container');
 							$(".loading").addClass('hidden-div-container');
 						}
-						/*setTimeout(function(){
-								setTimeout(function(){
-									$('div.progress-bar').width('10%');
-								},2000);
-								setTimeout(function(){
-									$('div.progress-bar').width('20%');
-								},2000);
-								setTimeout(function(){
-									$('div.progress-bar').width('30%');
-								},2000);
-								setTimeout(function(){
-									$('div.progress-bar').width('40%');
-								},1000);
-								setTimeout(function(){
-									$('div.progress-bar').width('50%');
-								},2000);
-								setTimeout(function(){
-									$('div.progress-bar').width('60%');
-								},1000);
-								setTimeout(function(){
-									$('div.progress-bar').width('70%');
-								},2000);
-								setTimeout(function(){
-									$('div.progress-bar').width('80%');
-								},1000);
-								setTimeout(function(){
-									$('div.progress-bar').width('90%');
-								},2000);
-								setTimeout(function(){
-									$('div.progress-bar').width('100%');
-								},3000);
-
-							}, 2000);
-*/
-				    		
 						
 				    	
 							
@@ -269,6 +234,8 @@ Template.navbarmain.events({
 			
 		});
 	}
+
+	
 });
 
 Template.partnership.events({

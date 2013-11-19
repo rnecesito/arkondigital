@@ -5,6 +5,10 @@
     "datatables": {},
     "paginator": {},
     "moment": {},
-    "jqueryui": {}
+    "jqueryui": {},
+    "sendgrid": {},
+    "jspdf":{
+    	"path":"packages/jspdf"
+    }
   }
 }

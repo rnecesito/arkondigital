@@ -193,6 +193,16 @@
       "sourceMapRoot": "packages"
     },
     {
+      "path": "packages/sendgrid.js",
+      "sourceMap": "packages/sendgrid.js.map",
+      "sourceMapRoot": "packages"
+    },
+    {
+      "path": "packages/jspdf.js",
+      "sourceMap": "packages/jspdf.js.map",
+      "sourceMapRoot": "packages"
+    },
+    {
       "path": "packages/session.js",
       "sourceMap": "packages/session.js.map",
       "sourceMapRoot": "packages"
@@ -213,6 +223,9 @@
     },
     {
       "path": "app/server/config.js"
+    },
+    {
+      "path": "app/server/sendgrid_config.js"
     },
     {
       "path": "app/model.js"
