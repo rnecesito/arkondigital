@@ -469,11 +469,22 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/packages/jspdf.js?4d5121d6860a6d1c8f3a72161b3dbafe82f1ab03",
+      "url": "/packages/jspdf.js?03697ed39174afd45acec6008ed0c965691ebced",
       "sourceMap": "packages/jspdf.js.map",
-      "sourceMapUrl": "/packages/4d5121d6860a6d1c8f3a72161b3dbafe82f1ab03.map",
-      "size": 77633,
-      "hash": "0574f0865c9accc712156176a64d1f564415aa58"
+      "sourceMapUrl": "/packages/03697ed39174afd45acec6008ed0c965691ebced.map",
+      "size": 79748,
+      "hash": "f9cd2f803a32ad4f41e42d8b76b4eefbe0c001a1"
+    },
+    {
+      "path": "packages/email.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/email.js?911578310472ff10dca16a5306b7f455801d0f35",
+      "sourceMap": "packages/email.js.map",
+      "sourceMapUrl": "/packages/911578310472ff10dca16a5306b7f455801d0f35.map",
+      "size": 1354,
+      "hash": "abf71b6843ea5456a8276d9c7d5c74d3016482a3"
     },
     {
       "path": "packages/webapp.js",
@@ -565,9 +576,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/client/templates/template.index.js?13f41ce9798e33d72f40f206295364551d70bb49",
-      "size": 53446,
-      "hash": "13f41ce9798e33d72f40f206295364551d70bb49"
+      "url": "/client/templates/template.index.js?7e8f7b55081ac55b1839ff2a64b1fb20b239b060",
+      "size": 53935,
+      "hash": "7e8f7b55081ac55b1839ff2a64b1fb20b239b060"
     },
     {
       "path": "app/client/templates/template.login.js",
@@ -664,18 +675,18 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/client/view-models/application_form.js?4900b71fe7095ae82d6d20028e9bd6f672905572",
-      "size": 10219,
-      "hash": "4900b71fe7095ae82d6d20028e9bd6f672905572"
+      "url": "/client/view-models/application_form.js?5de9d3b8d5e92b53c169d0fb8470c716f8d58621",
+      "size": 10415,
+      "hash": "5de9d3b8d5e92b53c169d0fb8470c716f8d58621"
     },
     {
       "path": "app/client/view-models/partnership.js",
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/client/view-models/partnership.js?3c489ca0aed22869bb0f93d1af9e56d628bceed0",
-      "size": 17950,
-      "hash": "3c489ca0aed22869bb0f93d1af9e56d628bceed0"
+      "url": "/client/view-models/partnership.js?62d17eacfc329ed55641e1854284c33aa568cc81",
+      "size": 28597,
+      "hash": "62d17eacfc329ed55641e1854284c33aa568cc81"
     },
     {
       "path": "app/client/client.js",
@@ -1598,7 +1609,7 @@
     {
       "path": "app.html",
       "where": "internal",
-      "hash": "46e653d2843f18fe84bff41b8c10b2a8d1f82f5f"
+      "hash": "2b0e7217a0a277eecb81c064d562ea6f21d4a502"
     }
   ]
 }

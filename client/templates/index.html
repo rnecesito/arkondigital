@@ -184,7 +184,17 @@
 		    			</div>
 		    		</div>
 				</div>
-				
+
+				<div class="row">
+					<div class="test col-xs-5">
+	    				<span>Paypal</span>
+		    		</div>
+		    		<div class="test col-xs-7">
+		    			<div class="row">
+		    				<input name="paypal" id="paypal" placeholder="Paypal" class="form-control" required />
+		    			</div>
+		    		</div>
+				</div>
 				
 		    	<div class="row test">
 				    <div class="col-xs-5">
@@ -757,7 +767,7 @@
 			      		</div>
 			      		<div class="row test">
 			      			<div class="col-lg-5">PayPal:</div>
-			      			<div class="col-lg-7"><input name="paypal" id="paypal" class="form-control" readonly /></div>
+			      			<div class="col-lg-7"><input name="paypal" id="paypal-contract" class="form-control" readonly /></div>
 			      		</div>
 			      		<div class="row test">
 			      			<div class="col-lg-5">YouTube Email:</div>
@@ -770,8 +780,8 @@
 		      		</div>
 		      		<!-- PAGE 2 OF CONTRACT -->
 		      		<div class="page" id="page2">
-		      			<h2>Page two</h2>
-		      	<!-- 		<b class="dark-gray">THIS CONTENT PROVIDER AGREEMENT (this “Agreement”)</b>
+		      			
+		      			<b class="dark-gray">THIS CONTENT PROVIDER AGREEMENT (this “Agreement”)</b>
 		      			<span>explains the contractual agreement between <b class="dark-gray">ArkonDigital, Corp.</b> A Company duly incorporated under the laws of the Province of Ontario , with a principal place of business at #38 –700 Exeter Rd, London, Ontario, Canada – N6E 1L2 (<b class="dark-gray">“ArkonDigital”</b>) and you (<b class="dark-gray">“Provider"</b>).</span><br><br>
 			      		<h4 class="dark-gray" style="text-align:center;">RECITALS and DEFINITIONS</h4>
 			      		<span>This Agreement sets forth the rights, obligations, terms and conditions for Provider’s delivery of video content to <b>ArkonDigital</b> and its network of video over IP (Internet Protocol) network operators/broadcasters, and/or wireless network operators and/or digital cable broadcasters including Provider’s use of and access to any of our web or software applications, text, scripts, graphics, photos, sounds, music, videos, audiovisual combinations, interactive features, downloads, services, and any other materials you may view on, access through, or contribute to the service (collectively, the “<b class="dark-gray"><i>Services</i></b>”).</span><br><br>
@@ -779,7 +789,7 @@
 						<span>B. <b class="dark-gray">“Titles”</b> means all audiovisual content including Live Event Content, Archived Content, and all audiovisual recordings submitted henceforth to ArkonDigital by Provider during the Term.</span><br><br>
 						<span>C. <b class="dark-gray">“Broadcast Media”</b> means advertisements provided by <b>Broadcast Media</b> and/or its partners and affiliates for inclusion in Broadcast Media Network related Sites and Services.</span><br><br>
 						<span>D. <b class="dark-gray">“Promotional Materials”</b> means any production artwork, movie stills, trailers and the names, likenesses and biographical material of “Talent” featured in the Titles, as well as the Provider’s brand name and trademarked logos and images, in connection with exploitation and promotion thereof. As used herein, “Talent” shall mean actors, irectors, producers, writers, musical performing artists and other performers, songwriters, crew and other persons, below the line and above the line, who performed or participated in the making of the Titles.</span><br><br>
-						<i class="contract-footer">ArkonDigital Content Provider Agreement</i> -->
+						<i class="contract-footer">ArkonDigital Content Provider Agreement</i>
 		      		</div>
 
 		      		<!-- PAGE 3 OF CONTRACT -->
@@ -895,7 +905,8 @@
 	      </div>
 
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-default" id="close-modal" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary" id="next-tab-btn2" style="display:none">I Agree</button>
 	        <button type="button" class="btn btn-primary next-step-btn first-step" id="next-tab-btn">Next</button>
 	      </div>
 	    </div><!-- /.modal-content -->

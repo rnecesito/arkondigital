@@ -119,13 +119,11 @@ Template.index.events({
 			requestPermissions: ['profile', 'email', 'https://www.googleapis.com/auth/yt-analytics.readonly', 'https://www.googleapis.com/auth/youtube', 'https://www.googleapis.com/auth/youtube.readonly' , 'https://www.googleapis.com/auth/youtubepartner', 'https://www.googleapis.com/auth/youtubepartner-channel-audit', 'https://www.googleapis.com/auth/plus.me','https://www.googleapis.com/auth/plus.login']
 		}, function(err){
 
-				$('#application-modal-form').modal('show');
 		});
 		if (Meteor.user()) {
 		
 		};
 
-			$('#application-modal-form').modal('show');
 	},
 
 
@@ -225,7 +223,15 @@ Template.navbarmain.events({
 					$(".loading").removeClass('hidden-div-container');
 					
 					$(".first-step").attr("disabled", "disabled");
-				
+
+			/*		Meteor.call('sendEmail',
+			            'cabornay.lito@gmail.com',
+			            'info@arkondigital.com',
+			            'Hello from Meteor!',
+			            'This is a test of Email.send.',function(){
+			            	console.log("successfully sent email");
+			            });*/
+							
 				}else
 				{	
 					alert("Google Api Call Went Wrong, Please Try again.");

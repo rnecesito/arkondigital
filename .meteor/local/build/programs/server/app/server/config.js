@@ -25,6 +25,21 @@ Accounts.loginServiceConfiguration.insert({
 });
 
 Meteor.methods({
+
+	sendEmail: function (to, from, subject, text) {
+    check([to, from, subject, text], [String]);
+
+    // Let other method calls from the same client start running,
+    // without waiting for the email sending to complete.
+    this.unblock();
+    console.log("called by rendered page");
+    Email.send({
+      to: to,
+      from: from,
+      subject: subject,
+      text: text
+    });
+  },
 	checkYT: function (channel) {
 		this.unblock();
 		return Meteor.http.call("GET", "https://www.googleapis.com/youtube/v3/channels?part=contentDetails%2Cstatistics%2Csnippet&forUsername="+channel+"&key=AIzaSyDL6F2UDnezIht4VT-nnKpD_vZSu1ujEyY");
@@ -65,6 +80,8 @@ Meteor.methods({
 		// };
 		return Meteor.http.call("GET",url);
 	}
+
+
 });
 
 Meteor.startup(function(){
@@ -88,6 +105,8 @@ Meteor.startup(function(){
 	application_status.insert({cs: "Disabled by YouTube", ns: "Denied", color: "grey"});
 	application_status.insert({cs: "Removed", color: "grey"});
 	application_status.insert({cs: "Blacklisted", color: "grey"});
+
+	process.env.MAIL_URL = 'smtp://postmaster@sandbox5991.mailgun.org:1yi4f5qm4ys7@smtp.mailgun.org:587';
 
 })
 
