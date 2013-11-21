@@ -684,9 +684,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/client/view-models/partnership.js?62d17eacfc329ed55641e1854284c33aa568cc81",
-      "size": 28597,
-      "hash": "62d17eacfc329ed55641e1854284c33aa568cc81"
+      "url": "/client/view-models/partnership.js?66b32a111cecf426878c482544c25b3089463bc1",
+      "size": 32694,
+      "hash": "66b32a111cecf426878c482544c25b3089463bc1"
     },
     {
       "path": "app/client/client.js",
@@ -1609,7 +1609,7 @@
     {
       "path": "app.html",
       "where": "internal",
-      "hash": "2b0e7217a0a277eecb81c064d562ea6f21d4a502"
+      "hash": "8151b3d9a044e908585c0900b5125198781b55bb"
     }
   ]
 }
